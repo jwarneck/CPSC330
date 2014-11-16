@@ -81,7 +81,7 @@ public class CreateAccount {
     //Check if Username is available
     public boolean checkUsername(String username){
         List UserNames = new ArrayList();
-        while (UserNames.
-        
+        while (UserNames != null) {
+            //check list of Usernames stored in the txt file
+        }
     }
-}
