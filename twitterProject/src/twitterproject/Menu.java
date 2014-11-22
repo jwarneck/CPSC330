@@ -6,28 +6,18 @@
 
 package twitterproject;
 
-import java.util.*;
+import java.util.Scanner;
 
 /**
  *
  * @author jordanwarnecke
  */
-
-
-
-public class TwitterProject {
-    
-    Scanner input = new Scanner(System.in);
-    String choice;
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Menu();
-    }
-    
-    public void Menu(){
+public class Menu {
+        public static void Menu(){
+        
+        Scanner input = new Scanner(System.in);
+        String choice;
+        
         System.out.println("Welcome to the CPSC department Message Board");
         System.out.println("Please choose an option below:");
         System.out.println("1: Login");
@@ -37,30 +27,36 @@ public class TwitterProject {
         System.out.println("5: Quit");
         
         choice = input.nextLine();
-        if (choice == "1"){
-            Login.loginMenu();
+        if (choice.equals("1")){
+            System.out.println("Login");
+            //Login.loginMenu();
         }
         
-        else if (choice == "2"){
-            CreateAccount.setFirstName();
-            CreateAccount.setLastName();
-            CreateAccount.setLocation();
-            CreateAccount.setEmail();
-            CreateAccount.setDateJoined();
+        else if (choice.equals("2")){
+            
+            System.out.println("Create Account");
+            
+            CreateAccount newAccount = new CreateAccount();
+            newAccount.CreateAccount();
+           // CreateAccount.setFirstName();
+           // CreateAccount.setLastName();
+           // CreateAccount.setLocation();
+           // CreateAccount.setEmail();
+           // CreateAccount.setDateJoined();
             
         }
         
-        else if (choice == "3"){
+        else if (choice.equals("3")){
             // print all recent stored messages
             // set limit to print n messages?
         }
         
-        else if (choice == "4"){
+        else if (choice.equals("4")){
             // print trending messages
         }
         
-        else if (choice == "5"){
-            return;
+        else if (choice.equals("5")){
+            System.exit(0);
         }
         
         else {

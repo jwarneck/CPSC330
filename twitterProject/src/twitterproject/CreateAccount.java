@@ -6,6 +6,9 @@
 
 package twitterproject;
 
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.text.*;
 import java.util.*;
 
@@ -15,19 +18,29 @@ import java.util.*;
  */
 public class CreateAccount {
     
+    
+    
     String firstName;
     String lastName;
     String email;
     String location;
     String dateJoined;
     String username;
+    String password;
+    String filename = "Users/jordanwarnecke/GitHub/CPSC330/twitterProject/dataFile.txt";
     
     
-    Scanner fileInput = new Scanner(new File("dataFile.txt"));
+    
     Scanner input = new Scanner(System.in); 
     
-    public void CreateAccount(){
-        //constructor stuff
+    public void CreateAccount() throws IOException{
+        setFirstName();
+        setLastName();
+        setEmail();
+        setLocation();
+        setDateJoined();
+        setUsername();
+        setPassword();
     }
     
     //Set User's first name
@@ -70,29 +83,68 @@ public class CreateAccount {
         
     }
     
+    //Set Password
+    public void setPassword(){
+        System.out.println("Please enter the password you'd like to use.");
+        password = input.nextLine();
+    }
+    
     //Set Username
-    public void setUsername() {
+    public void setUsername() throws IOException {
         
         System.out.println("Please enter the Username you'd like to have.");
         username = input.nextLine();
-        
-        if (!checkUsername(username)){
-            System.out.println("Unfortunately that Username is already in use.");
-            System.out.println("Please try another Username.");
-            username = input.nextLine();
+        boolean check = checkUsername(username);
+        if (check == true) {
+            System.out.println("Username already in use, please try again.");
+        } 
+        else {
+            System.out.println("Your username is: " + username);
         }
+        
         
     }
     
     //Check if Username is available
-    public boolean checkUsername(String username) {
-        List UserNames = new ArrayList();
+    public boolean checkUsername(String username)throws IOException{
         
-
-        while (UserNames != null) {
-            //check list of Usernames stored in the txt file
+        System.out.println("");
+        System.out.println("Check Username");
+        System.out.println("");
+        
+        System.out.println("");
+        
+        
+        String check = readFile(filename); 
+        if (check.equals(username)) {
+            return true;
         }
-        
-        return false;
+        else
+            return false;
+               
+    }
+    
+    public String readFile(String filename) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        try{
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            
+            while (line != null) {
+                sb.append(line);
+                sb.append("\n");
+                line = br.readLine();
+                
+            }
+            /**
+            System.out.println("");
+            System.out.println("print SB");
+            System.out.print(sb.toString());
+            */
+            return sb.toString();
+        }
+        finally {
+            br.close();
+        }
     }
 }
