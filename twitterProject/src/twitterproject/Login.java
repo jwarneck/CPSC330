@@ -20,7 +20,7 @@ public class Login {
         User.getPassword();
     }
     
-    private void loginMenu(){
+    public void loginMenu(){
         System.out.println("Please choose an option below: ");
         System.out.println("1: Edit Account Info");
         System.out.println("2: Post a new message");
