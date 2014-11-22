@@ -16,7 +16,11 @@ public class TwitterProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Menu();
     }
     
+    public static void Menu(){
+        System.out.println("Welcome to the CPSC department Message Board");
+        System.out.println("Please choose an option below:");
+    }
 }

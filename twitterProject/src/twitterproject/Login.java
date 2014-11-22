@@ -20,4 +20,13 @@ public class Login {
         User.getPassword();
     }
     
+    private void loginMenu(){
+        System.out.println("Please choose an option below: ");
+        System.out.println("1: Edit Account Info");
+        System.out.println("2: Post a new message");
+        System.out.println("3: View trending messages");
+        System.out.println("4: View messages");
+        System.out.println("5: Logout and exit");
+    }
+    
 }

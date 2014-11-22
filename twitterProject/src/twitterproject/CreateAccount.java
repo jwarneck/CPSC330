@@ -6,8 +6,8 @@
 
 package twitterproject;
 
-import java.util.*;
 import java.text.*;
+import java.util.*;
 
 /**
  *
@@ -22,7 +22,13 @@ public class CreateAccount {
     String dateJoined;
     String username;
     
+    
+    Scanner fileInput = new Scanner(new File("dataFile.txt"));
     Scanner input = new Scanner(System.in); 
+    
+    public void CreateAccount(){
+        //constructor stuff
+    }
     
     //Set User's first name
     public void setFirstName(){
@@ -65,7 +71,7 @@ public class CreateAccount {
     }
     
     //Set Username
-    public void setUsername(){
+    public void setUsername() {
         
         System.out.println("Please enter the Username you'd like to have.");
         username = input.nextLine();
@@ -79,9 +85,14 @@ public class CreateAccount {
     }
     
     //Check if Username is available
-    public boolean checkUsername(String username){
+    public boolean checkUsername(String username) {
         List UserNames = new ArrayList();
+        
+
         while (UserNames != null) {
             //check list of Usernames stored in the txt file
         }
+        
+        return false;
     }
+}
