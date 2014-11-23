@@ -21,8 +21,12 @@ public class EditProfile {
     String choice;
     boolean USER = true;
     Scanner input = new Scanner(System.in);
-    String username = User.getUsername();
-    String password = User.getPassword();
+    String username;
+    String password;
+    
+    User set = new User();
+    User get = new User();
+    
     
     public void EditProfile() throws IOException{
         editMenu();
@@ -35,7 +39,8 @@ public class EditProfile {
         
         if (USER == true){
             username = newUsername;
-            User.setUsername(username);
+            
+            set.setUsername(username);
         }
         else
             System.out.println("Username already in use, please try again.");
@@ -44,6 +49,7 @@ public class EditProfile {
     
     public void changePassword (String password){
         password = newPassword;
+        set.setPassword(newPassword);
     }
     
     public void changeLocation (String location){

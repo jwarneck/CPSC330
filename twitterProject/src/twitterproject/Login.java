@@ -21,20 +21,22 @@ public class Login {
     String pass;
     boolean check, check2 = false;
     
+    User use = new User();
+    
     
     public void Login() throws IOException{
         System.out.println("");
         System.out.println("Please enter your User Name:");
         user = input.nextLine();
         while (check == false){
-            if (user.equals(User.getUsername())){
+            if (user.equals(use.getUsername())){
                 check = true;
             }
         }
         System.out.println("Please enter your password:");
         pass = input.nextLine();
         while (check2 == false){
-            if (pass.equals(User.getPassword())){
+            if (pass.equals(use.getPassword())){
                 check2 = true;
             }
         }

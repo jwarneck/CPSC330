@@ -1,1 +1,5 @@
-USER
+USER = jwarneck
+PASS = 1234
+EMAIL = jw@email.com
+LOC = Fredericksburg, VA
+DATE = DateJoined
