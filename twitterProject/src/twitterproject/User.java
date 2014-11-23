@@ -14,22 +14,25 @@ package twitterproject;
 
 public class User {
     
-    private String userName;
     
-    public String getUsername(){
-        
-        return userName;
+    
+    
+    public static String getUsername(){
+        String username = "jwarneck";
+        return username;
     }
     
+    public static void setUsername(String newUsername){
+       String username = newUsername;
+       
+    }
     
-    /**
-     * sets user name when account is created
-     * then checks database of usernames to ensure
-     * that name isn't already in use.
-     */
-    public void setUsername(){
-        
-        
-        
+    public static String getPassword(){
+        String password = "1234";
+        return password;
+    }
+    
+    public void setPassword(String newPassword){
+        //password = newPassword;
     }
 }

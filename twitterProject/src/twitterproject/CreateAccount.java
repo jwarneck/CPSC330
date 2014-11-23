@@ -27,7 +27,7 @@ public class CreateAccount {
     String dateJoined;
     String username;
     String password;
-    String filename = "Users/jordanwarnecke/GitHub/CPSC330/twitterProject/dataFile.txt";
+    String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/dataFile.txt";
     
     
     
@@ -41,6 +41,9 @@ public class CreateAccount {
         setDateJoined();
         setUsername();
         setPassword();
+        
+        Login LoginMenu = new Login();
+        LoginMenu.Login();
     }
     
     //Set User's first name
@@ -97,6 +100,7 @@ public class CreateAccount {
         boolean check = checkUsername(username);
         if (check == true) {
             System.out.println("Username already in use, please try again.");
+            setUsername();
         } 
         else {
             System.out.println("Your username is: " + username);
@@ -108,19 +112,14 @@ public class CreateAccount {
     //Check if Username is available
     public boolean checkUsername(String username)throws IOException{
         
-        System.out.println("");
-        System.out.println("Check Username");
-        System.out.println("");
-        
-        System.out.println("");
-        
-        
-        String check = readFile(filename); 
+        String check = readFile(filename);
+        System.out.println("CHECK: " + check + " USERNAME: " + username);
         if (check.equals(username)) {
             return true;
         }
         else
             return false;
+            //return true;
                
     }
     
@@ -131,16 +130,18 @@ public class CreateAccount {
             String line = br.readLine();
             
             while (line != null) {
+                line = br.readLine();
                 sb.append(line);
                 sb.append("\n");
-                line = br.readLine();
+                //line = br.readLine();
                 
             }
-            /**
+            
+            String THIS = sb.toString();
             System.out.println("");
             System.out.println("print SB");
-            System.out.print(sb.toString());
-            */
+            System.out.println(THIS);
+            
             return sb.toString();
         }
         finally {

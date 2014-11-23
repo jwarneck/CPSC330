@@ -6,20 +6,22 @@
 
 package twitterproject;
 
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
 
 /**
  *
  * @author jordanwarnecke
  */
 public class Menu {
-        public static void Menu(){
+        public static void Menu() throws IOException{
         
         Scanner input = new Scanner(System.in);
         String choice;
         
         System.out.println("Welcome to the CPSC department Message Board");
         System.out.println("Please choose an option below:");
+        System.out.println("");
         System.out.println("1: Login");
         System.out.println("2: Create Account");
         System.out.println("3: View messages");
@@ -28,8 +30,9 @@ public class Menu {
         
         choice = input.nextLine();
         if (choice.equals("1")){
-            System.out.println("Login");
-            //Login.loginMenu();
+            //System.out.println("Login");
+            Login newLogin = new Login();
+            newLogin.Login();
         }
         
         else if (choice.equals("2")){
@@ -38,29 +41,32 @@ public class Menu {
             
             CreateAccount newAccount = new CreateAccount();
             newAccount.CreateAccount();
-           // CreateAccount.setFirstName();
-           // CreateAccount.setLastName();
-           // CreateAccount.setLocation();
-           // CreateAccount.setEmail();
-           // CreateAccount.setDateJoined();
+           
             
         }
         
         else if (choice.equals("3")){
+            System.out.println("Message list");
+            
             // print all recent stored messages
             // set limit to print n messages?
         }
         
         else if (choice.equals("4")){
-            // print trending messages
+            System.out.println("View Trending");
+            Trending newTrend = new Trending();
+            newTrend.Trending();
+            
         }
         
         else if (choice.equals("5")){
+            System.out.println("Logged out successfully.");
             System.exit(0);
         }
         
         else {
             System.out.println("Invalid choice, please try again.");
+            Menu();
         }
             
         

@@ -14,10 +14,12 @@ import java.util.*;
  * @author jordanwarnecke
  */
 public class Trending {
-    private ArrayList hashtags;
+    private ArrayList hashtags = new ArrayList();
     
-    public Trending(){
-        hashtags = new ArrayList();
+    public void Trending(){
+        for (int i = 0; i < hashtags.size(); i++){
+            System.out.print(hashtags);
+        }
     }
     
     public void addHashtag (Hashtag hashtag) {
@@ -25,8 +27,10 @@ public class Trending {
         
     }
     
-    public void showTrending(){
-        //print out lsit of tweets with trending hashtags
+    public void showHashtag(String hashtag){
+        System.out.println("Seraching messages with Hashtag: " + hashtag);
+        
+        //print out lsit of tweets with a certain hashtag
     }
 }
 
