@@ -1,5 +1,7 @@
 USER = jwarneck
 PASS = 1234
+FIRST = Jordan
+LAST = Warnecke
 EMAIL = jw@email.com
 LOC = Fredericksburg, VA
 DATE = DateJoined
