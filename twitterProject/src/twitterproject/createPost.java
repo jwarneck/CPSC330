@@ -77,7 +77,7 @@ public class createPost {
     public void findPost(){
     	    String filePath = "C:/Users/User/Desktop/dataFile.txt";
     	    BufferedReader br;
-    	    String inputSearch = "Author:";
+    	    String inputSearch = "Author:" + author;
     	    String line = "";
 
     	    try {
