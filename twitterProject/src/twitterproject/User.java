@@ -46,18 +46,18 @@ public class User {
     protected void processLine(String aLine){
         Scanner scanner = new Scanner(aLine);
         scanner.useDelimiter(" = ");
-        loop1: if (scanner.hasNext()){
+        if (scanner.hasNext()){
             //asumes line has a certain structure
-            System.out.println("THING IS: " + thing);
+            //System.out.println("THING IS: " + thing);
             if (scanner.next().equals(thing)){
                 thing2 = scanner.next();
-                System.out.println("THING 2: " + thing2);
+                //System.out.println("THING 2: " + thing2);
                 //check = true;
                 
             }
             
             else {
-                System.out.println("processLine elseIN");
+                //System.out.println("processLine elseIN");
                 if ( scanner.hasNextLine())
                     processLine(scanner.nextLine());
             }

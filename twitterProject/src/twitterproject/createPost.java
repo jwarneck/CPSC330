@@ -17,7 +17,7 @@ import java.util.*;
  */
 public class createPost {
     
-    String author;
+    //String author;
     String datePosted;
     String message;
     String messageShown;
@@ -28,11 +28,20 @@ public class createPost {
     String otherUsers;
     
     Scanner input = new Scanner(System.in);
+    Login test = new Login();
+    User stuff = new User();
+    String author;
+
+    public createPost() throws IOException {
+        this.author = stuff.getUsername();
+    }
     
-    public void createPost(){
+    
+    public void createPost() throws IOException{
         setMessage();
         charLimit();
         postMessage();
+        test.loginMenu();
     }
     
     public void setMessage(){
@@ -44,6 +53,9 @@ public class createPost {
         	cancelPost();
         }
         postMessage();
+        System.out.println("");
+        System.out.println("Message psoted successfully! Returning to main menu.");
+        System.out.println("");
         
         
     }
@@ -58,7 +70,7 @@ public class createPost {
         
     	message = "Author: " + author + " : " + message + " [Favourited: 0]" + "[Reposted: 0]";
 
-    	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {
     	    out.println(message);
     	}catch (IOException e) {
         	}
@@ -76,6 +88,10 @@ public class createPost {
     public void charLimit(){
     	charCount = message.length();
         if (charCount > 140){
+            System.out.println("");
+            System.out.println("Message is too long, please reduce length to ");
+            System.out.println("less than 140 characters.");
+            System.out.println("");
             setMessage();
         }
     }
