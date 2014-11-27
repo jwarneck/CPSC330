@@ -7,6 +7,7 @@
 package twitterproject;
 
 import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -24,10 +25,9 @@ public class User {
     String USER;
     String thing;
     String thing2;
-    String thing3 = "-";
     String password;
     String email;
-    int check = 0;
+    boolean check = false;
     
     
     
@@ -46,16 +46,16 @@ public class User {
     protected void processLine(String aLine){
         Scanner scanner = new Scanner(aLine);
         scanner.useDelimiter(" = ");
-        //while (!scanner.next().equals(thing3)){
-        if (scanner.hasNext()){
+        loop1: if (scanner.hasNext()){
             //asumes line has a certain structure
             System.out.println("THING IS: " + thing);
             if (scanner.next().equals(thing)){
                 thing2 = scanner.next();
-                //check = true;
                 System.out.println("THING 2: " + thing2);
+                //check = true;
                 
             }
+            
             else {
                 System.out.println("processLine elseIN");
                 if ( scanner.hasNextLine())
@@ -73,6 +73,7 @@ public class User {
     
     private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt");
     private final static Charset ENCODING = StandardCharsets.UTF_8;
+    private final static String fileName = "/twitterproject/dataFile.txt";
     
     private static void log(Object aObject){
         System.out.println(String.valueOf(aObject));
@@ -120,4 +121,7 @@ public class User {
         email = thing2;
         return email;
     }
+
+    FileWriter fileWriter = new FileWriter(fileName);
+
 }

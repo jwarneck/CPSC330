@@ -5,3 +5,6 @@ LAST = Warnecke
 EMAIL = jw@email.com
 LOC = Fredericksburg, VA
 DATE = DateJoined
+
+USER = asmall
+PASS = 4321
