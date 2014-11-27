@@ -29,13 +29,18 @@ public class createPost {
     
     Scanner input = new Scanner(System.in);
     
+    public void createPost(){
+        setMessage();
+        charLimit();
+        postMessage();
+    }
     
     public void setMessage(){
         System.out.println("Type your message, or 1 to cancel. message must be under 140 characters: ");
         message = input.nextLine();
         cancelPost();
         charLimit();
-        if (message =="1") {
+        if (message.equals("1")) {
         	cancelPost();
         }
         postMessage();
@@ -70,7 +75,7 @@ public class createPost {
     
     public void charLimit(){
     	charCount = message.length();
-        if (charCount > 150){
+        if (charCount > 140){
             setMessage();
         }
     }

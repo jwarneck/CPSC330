@@ -122,6 +122,6 @@ public class User {
         return email;
     }
 
-    FileWriter fileWriter = new FileWriter(fileName);
+   
 
 }

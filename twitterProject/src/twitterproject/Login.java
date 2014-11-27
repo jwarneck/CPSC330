@@ -67,6 +67,8 @@ public class Login {
         
         else if (choice.equals("2")){
             System.out.println("post new");
+            createPost post = new createPost();
+            post.createPost();
             
         }
         

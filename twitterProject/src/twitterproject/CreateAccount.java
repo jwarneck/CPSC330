@@ -7,6 +7,7 @@
 package twitterproject;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.text.*;
@@ -51,6 +52,8 @@ public class CreateAccount {
     
         System.out.println("Please enter your First Name.");
         firstName = input.nextLine();
+        
+        
     }
     
     //Set User's Last Name
