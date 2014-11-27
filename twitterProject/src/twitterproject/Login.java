@@ -9,6 +9,7 @@ package twitterproject;
 import java.io.IOException;
 import java.util.*;
 
+
 /**
  *
  * @author jordanwarnecke
@@ -43,6 +44,21 @@ public class Login {
         
         if ((check == true) && (check2 == true)){
             loginMenu();
+        }
+        
+        else {
+            System.out.println("No account exists, would you like to create one?");
+            System.out.println("(Y or N)");
+            String that = input.nextLine();
+            
+            if(that.equals("Y")){
+                CreateAccount account = new CreateAccount();
+                account.CreateAccount();
+            }
+            
+            else {
+                System.exit(0);
+            }
         }
         
         
@@ -91,6 +107,7 @@ public class Login {
         
         else if (choice.equals("4")){
             System.out.println("view recent messages");
+            
             
         }
         

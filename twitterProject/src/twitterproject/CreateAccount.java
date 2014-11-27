@@ -8,6 +8,7 @@ package twitterproject;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.text.*;
@@ -28,13 +29,20 @@ public class CreateAccount {
     String dateJoined;
     String username;
     String password;
-    String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/dataFile.txt";
+    String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt";
+    BufferedWriter writer;
     
     
     
     Scanner input = new Scanner(System.in); 
+
+    public CreateAccount() throws IOException {
+        this.writer = new BufferedWriter(new FileWriter(filename));
+    }
     
     public void CreateAccount() throws IOException{
+        
+        writer.write("\n");
         setFirstName();
         setLastName();
         setEmail();
@@ -42,57 +50,69 @@ public class CreateAccount {
         setDateJoined();
         setUsername();
         setPassword();
+        writer.close();
         
         Login LoginMenu = new Login();
         LoginMenu.Login();
     }
     
     //Set User's first name
-    public void setFirstName(){
+    public void setFirstName() throws IOException{
     
         System.out.println("Please enter your First Name.");
         firstName = input.nextLine();
-        
+        writer.write("FIRST = " + firstName);
+        writer.newLine();
         
     }
     
     //Set User's Last Name
-    public void setLastName(){
+    public void setLastName() throws IOException{
         
         System.out.println("Please enter your Last Name.");
         lastName = input.nextLine();
+        writer.write("LAST = " + lastName);
+        writer.newLine();
     
     }
     
     //Set User's Email address
-    public void setEmail(){
+    public void setEmail() throws IOException{
         
         System.out.println("Please enter your Email Address.");
         email = input.nextLine();
+        writer.write("EMAIL = " + email);
+        writer.newLine();
     
     }
     
     //Set Location of User
-    public void setLocation(){
+    public void setLocation() throws IOException{
         
         System.out.println("Please enter where you are located.");
         location = input.nextLine();
+        writer.write("LOC = " + location);
+        writer.newLine();
     
     }
     
     //Set Date Joined
-    public void setDateJoined(){
+    public void setDateJoined() throws IOException{
         
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Calendar cal = Calendar.getInstance();
         dateJoined = dateFormat.format(cal.getTime());
+        writer.write("DJ = " + dateJoined);
+        writer.newLine();
         
     }
     
     //Set Password
-    public void setPassword(){
+    public void setPassword() throws IOException{
         System.out.println("Please enter the password you'd like to use.");
         password = input.nextLine();
+        writer.write("PASS = " + password);
+        writer.newLine();
     }
     
     //Set Username
@@ -106,6 +126,8 @@ public class CreateAccount {
             setUsername();
         } 
         else {
+            writer.write("USER = " + username);
+            writer.newLine();
             System.out.println("Your username is: " + username);
         }
         

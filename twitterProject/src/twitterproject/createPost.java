@@ -52,9 +52,20 @@ public class createPost {
         if (message.equals("1")) {
         	cancelPost();
         }
+        
+        else if (charCount > 140){
+            
+            System.out.println("");
+            System.out.println("Message is too long, please reduce length to ");
+            System.out.println("less than 140 characters.");
+            System.out.println("");
+            setMessage();
+        
+        }
+        
         postMessage();
         System.out.println("");
-        System.out.println("Message psoted successfully! Returning to main menu.");
+        System.out.println("Message posted successfully! Returning to main menu.");
         System.out.println("");
         
         
@@ -87,13 +98,7 @@ public class createPost {
     
     public void charLimit(){
     	charCount = message.length();
-        if (charCount > 140){
-            System.out.println("");
-            System.out.println("Message is too long, please reduce length to ");
-            System.out.println("less than 140 characters.");
-            System.out.println("");
-            setMessage();
-        }
+        
     }
     public void findPost(){
     	    String filePath = "C:/Users/User/Desktop/dataFile.txt";

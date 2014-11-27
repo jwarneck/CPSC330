@@ -1,8 +1,8 @@
-USER = jwarneck
-PASS = 1234
-FIRST = Jordan
-LAST = Warnecke
-EMAIL = jw@email.com
-LOC = Fredericksburg, VA
-DATE = DateJoined
 
+FIRST = Doug
+LAST = Warnecke
+EMAIL = DW@email.com
+LOC = Arlington
+DJ = 11/27/2014
+USER = dwarnecke
+PASS = 1234
