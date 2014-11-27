@@ -29,6 +29,8 @@ public class User {
     String email;
     boolean check = false;
     
+    Scanner input = new Scanner(System.in);
+    
     
     
     //read files with structured data
@@ -43,7 +45,7 @@ public class User {
     }
     
     //process lines
-    protected void processLine(String aLine){
+    protected void processLine(String aLine) throws IOException{
         Scanner scanner = new Scanner(aLine);
         scanner.useDelimiter(" = ");
         if (scanner.hasNext()){
@@ -67,13 +69,29 @@ public class User {
         
         else {
             log("Empty or invalid line. Unable to process.");
+            /**
+            System.out.println("No account exists, would you like to create one?");
+            System.out.println("(Y or N)");
+            String that = input.nextLine();
+            
+            if(that.equals("Y")){
+                CreateAccount account = new CreateAccount();
+                account.CreateAccount();
+            }
+            
+            else {
+                System.exit(0);
+            }
+            */
+            
+            
         }
         
     }
     
     private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt");
     private final static Charset ENCODING = StandardCharsets.UTF_8;
-    private final static String fileName = "/twitterproject/dataFile.txt";
+    //private final static String fileName = "/twitterproject/dataFile.txt";
     
     private static void log(Object aObject){
         System.out.println(String.valueOf(aObject));

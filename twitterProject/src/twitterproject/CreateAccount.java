@@ -20,8 +20,6 @@ import java.util.*;
  */
 public class CreateAccount {
     
-    
-    
     String firstName;
     String lastName;
     String email;
@@ -53,7 +51,7 @@ public class CreateAccount {
         writer.close();
         
         Login LoginMenu = new Login();
-        LoginMenu.Login();
+        LoginMenu.Login1();
     }
     
     //Set User's first name

@@ -32,7 +32,7 @@ public class Menu {
         if (choice.equals("1")){
             //System.out.println("Login");
             Login newLogin = new Login();
-            newLogin.Login();
+            newLogin.Login1();
         }
         
         else if (choice.equals("2")){

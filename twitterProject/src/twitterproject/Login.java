@@ -7,7 +7,12 @@
 package twitterproject;
 
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -20,12 +25,24 @@ public class Login {
     String choice;
     String user;
     String pass;
+    String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
     
     User use = new User();
     
+    BufferedReader br;
+
+    /**
+    public Login() {
+        try {
+            this.br = new BufferedReader(new FileReader(msgFile));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    **/
     
-    public void Login() throws IOException{
+    public void Login1() throws IOException{
         System.out.println("");
         System.out.println("Please enter your User Name:");
         user = input.nextLine();
@@ -46,6 +63,7 @@ public class Login {
             loginMenu();
         }
         
+        /**
         else {
             System.out.println("No account exists, would you like to create one?");
             System.out.println("(Y or N)");
@@ -60,6 +78,7 @@ public class Login {
                 System.exit(0);
             }
         }
+        */
         
         
     }
@@ -107,6 +126,8 @@ public class Login {
         
         else if (choice.equals("4")){
             System.out.println("view recent messages");
+            System.out.println(br);
+            
             
             
         }

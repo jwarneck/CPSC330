@@ -63,10 +63,13 @@ public class createPost {
         
         }
         
-        postMessage();
-        System.out.println("");
-        System.out.println("Message posted successfully! Returning to main menu.");
-        System.out.println("");
+        else {
+            postMessage();
+            System.out.println("");
+            System.out.println("Message posted successfully! Returning to main menu.");
+            System.out.println("");
+        
+        }
         
         
     }
