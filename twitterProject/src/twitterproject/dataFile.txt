@@ -1,0 +1,18 @@
+FIRST = Jordan
+LAST = warnecke
+EMAIL = jordanwarnecke2meal
+LOC = arlington
+DJ = 11/28/2014
+USER = jwarneck
+PASS = asdf
+
+
+FIRST = mom
+LAST = hanis
+EMAIL = asdf
+LOC = sfd
+DJ = 11/28/2014
+USER = mom
+PASS = 1234
+
+

@@ -57,8 +57,8 @@ public class CreateAccount {
     	}catch (IOException e) {
         	}
         
-        Login LoginMenu = new Login();
-        LoginMenu.Login1();
+        Menu LoginMenu = new Menu();
+        LoginMenu.Menu();
     }
     
     //Set User's first name
