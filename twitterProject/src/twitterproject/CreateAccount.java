@@ -28,7 +28,8 @@ public class CreateAccount {
     String dateJoined;
     String username;
     String password;
-    String filename = "/C:/Users/User/Desktop/dataFile.txt";
+    //String filename = "/C:/Users/User/Desktop/dataFile.txt";
+    String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt";
     BufferedWriter writer;
     String whole;
     
@@ -50,6 +51,12 @@ public class CreateAccount {
         setPassword();
         //writer.write("\n" + whole);
         
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
+    	    out.println("\n");
+        
+    	}catch (IOException e) {
+        	}
+        
         Login LoginMenu = new Login();
         LoginMenu.Login1();
     }
@@ -60,7 +67,10 @@ public class CreateAccount {
         System.out.println("Please enter your First Name.");
         firstName = input.nextLine();
         firstName = "FIRST = " + firstName;
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    //out.println(firstName);
+        
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
     	    out.println(firstName);
         
         
@@ -75,7 +85,10 @@ public class CreateAccount {
         System.out.println("Please enter your Last Name.");
         lastName = input.nextLine();
         lastName = "LAST = " + lastName;
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	   // out.println(lastName);
+        
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
     	    out.println(lastName);
         
         
@@ -90,7 +103,10 @@ public class CreateAccount {
         System.out.println("Please enter your Email Address.");
         email = input.nextLine();
         email = "EMAIL = " + email;
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	  //  out.println(email);
+            
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
     	    out.println(email);
         
         
@@ -105,7 +121,10 @@ public class CreateAccount {
         System.out.println("Please enter where you are located.");
         location = input.nextLine();
         location = "LOC = " + location;
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	//    out.println(location);
+        
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
     	    out.println(location);
         
         
@@ -121,9 +140,11 @@ public class CreateAccount {
         Calendar cal = Calendar.getInstance();
         dateJoined = dateFormat.format(cal.getTime());
         dateJoined = "DJ = " + dateJoined;
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
-    	    out.println(dateJoined);
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	//    out.println(dateJoined);
         
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
+    	    out.println(dateJoined);
         
     	}catch (IOException e) {
         	}
@@ -135,9 +156,11 @@ public class CreateAccount {
         System.out.println("Please enter the password you'd like to use.");
         password = input.nextLine();
         password = "PASS = " + password;
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
-    	    out.println(password);
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	//    out.println(password);
         
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
+    	    out.println(password);
         
     	}catch (IOException e) {
         	}
@@ -155,8 +178,11 @@ public class CreateAccount {
         } 
         else {
         	username = "USER = " + username;
-            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
-        	    out.println(username);
+           // try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+           //	    out.println(username);
+                
+            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt", true)))) {
+                out.println(username);
             
             
         	}catch (IOException e) {
@@ -177,7 +203,7 @@ public class CreateAccount {
         }
         else
             return false;
-            //return true;
+            
                
     }
     
@@ -191,15 +217,8 @@ public class CreateAccount {
                 line = br.readLine();
                 sb.append(line);
                 sb.append("\n");
-                //line = br.readLine();
-                //whole = line;
                 
             }
-            
-            //String THIS = sb.toString();
-            //System.out.println("");
-            //System.out.println("print SB");
-            //System.out.println(THIS);
             
             return sb.toString();
         }
