@@ -35,11 +35,10 @@ public class CreateAccount {
     
     Scanner input = new Scanner(System.in); 
 
-    public CreateAccount() throws IOException {
-        this.writer = new BufferedWriter(new FileWriter(filename));
-    }
     
     public void CreateAccount() throws IOException{
+        
+        this.writer = new BufferedWriter(new FileWriter(filename));
         
         writer.write("\n");
         setFirstName();
@@ -50,7 +49,7 @@ public class CreateAccount {
         setUsername();
         setPassword();
         writer.write("\n");
-        //writer.write(whole);
+        //writer.write("\n" + whole);
         writer.close();
         
         Login LoginMenu = new Login();
@@ -160,7 +159,7 @@ public class CreateAccount {
                 sb.append(line);
                 sb.append("\n");
                 //line = br.readLine();
-                whole = line;
+                //whole = line;
                 
             }
             

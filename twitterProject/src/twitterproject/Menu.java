@@ -17,8 +17,8 @@ import java.util.*;
 public class Menu {
         public static void Menu() throws IOException{
             
-        //File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
-        File file = new File("/twitterproject/messages.txt");
+        File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
+        
             
         Scanner input = new Scanner(System.in);
         String choice;
@@ -29,8 +29,8 @@ public class Menu {
         System.out.println("1: Login");
         System.out.println("2: Create Account");
         System.out.println("3: View messages");
-        System.out.println("4: View trending messages");
-        System.out.println("5: Quit");
+        //System.out.println("4: View trending messages");
+        System.out.println("4: Quit");
         
         choice = input.nextLine();
         if (choice.equals("1")){
@@ -68,15 +68,15 @@ public class Menu {
             // print all recent stored messages
             // set limit to print n messages?
         }
-        
+        /**
         else if (choice.equals("4")){
             System.out.println("View Trending");
             Trending newTrend = new Trending();
             newTrend.Trending();
             
         }
-        
-        else if (choice.equals("5")){
+        */
+        else if (choice.equals("4")){
             System.out.println("Logged out successfully.");
             System.exit(0);
         }

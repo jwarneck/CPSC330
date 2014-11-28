@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 
 public class User {
-    String username = "jwarneck";
+    String username;
     String USER;
     String thing;
     String thing2;

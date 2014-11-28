@@ -1,0 +1,9 @@
+
+FIRST = j
+LAST = w
+EMAIL = asdf
+LOC = asdf
+DJ = 11/27/2014
+USER = jwarneck
+PASS = 1234
+

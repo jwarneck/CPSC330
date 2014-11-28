@@ -8,11 +8,10 @@ package twitterproject;
 
 import java.io.IOException;
 import java.io.BufferedReader;
-import java.io.FileReader;
+//import java.io.FileReader;
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 /**
@@ -25,11 +24,9 @@ public class Login {
     String choice;
     String user;
     String pass;
-    //String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
-    String msgFile = "/twitterproject/messages.txt";
+    String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
-    //File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
-    File file = new File("/twitterproject/messages.txt");
+    File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
     User use = new User();
     
     BufferedReader br;
