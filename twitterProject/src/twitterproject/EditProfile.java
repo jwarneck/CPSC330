@@ -23,6 +23,8 @@ public class EditProfile {
     Scanner input = new Scanner(System.in);
     String username;
     String password;
+    String location;
+    String email;
     
     User set = new User();
     User get = new User();
@@ -32,7 +34,7 @@ public class EditProfile {
         editMenu();
     }
     
-    public void changeUsername (String username){
+    public void changeUsername (){
         //user enters new desired username
         //bool statement checking username
         
@@ -47,17 +49,19 @@ public class EditProfile {
         
     }
     
-    public void changePassword (String password){
+    public void changePassword (){
         password = newPassword;
         set.setPassword(newPassword);
     }
     
-    public void changeLocation (String location){
+    public void changeLocation (){
         location = newLocation;
+        set.setLocation(location);
     }
     
-    public void changeEmail (String email){
+    public void changeEmail (){
         email = newEmail;
+        set.setEmail(email);
     }
 
     public void editMenu() throws IOException{
@@ -74,7 +78,7 @@ public class EditProfile {
         
         if (choice.equals("1")){
             System.out.println("Change Username");
-            //changeUsername(username);
+            changeUsername();
         }
         
         else if (choice.equals("2")){

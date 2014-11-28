@@ -27,6 +27,8 @@ public class User {
     String thing2;
     String password;
     String email;
+    String newLocation;
+    String newEmail;
     boolean check = false;
     
     Scanner input = new Scanner(System.in);
@@ -129,7 +131,8 @@ public class User {
     }
     
     public void setPassword(String newPassword){
-        //password = newPassword;
+        password = newPassword;
+        System.out.println("NEW PASSWORD SET");
     }
     
     public String getEmail() throws IOException{
@@ -139,7 +142,15 @@ public class User {
         email = thing2;
         return email;
     }
+    
+    public void setLocation(String location){
+        newLocation = location;
+        System.out.println("NEW LOCATION = " + newLocation);
+    }
 
-   
+    public void setEmail(String email){
+        newEmail = email;
+        System.out.println("NEW EMAIL = " + newEmail);
+    }
 
 }
