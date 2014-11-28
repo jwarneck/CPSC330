@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.*;
 import java.util.*;
 
@@ -27,7 +28,7 @@ public class CreateAccount {
     String dateJoined;
     String username;
     String password;
-    String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt";
+    String filename = "/C:/Users/User/Desktop/dataFile.txt";
     BufferedWriter writer;
     String whole;
     
@@ -38,9 +39,8 @@ public class CreateAccount {
     
     public void CreateAccount() throws IOException{
         
-        this.writer = new BufferedWriter(new FileWriter(filename));
         
-        writer.write("\n");
+        
         setFirstName();
         setLastName();
         setEmail();
@@ -48,9 +48,7 @@ public class CreateAccount {
         setDateJoined();
         setUsername();
         setPassword();
-        writer.write("\n");
         //writer.write("\n" + whole);
-        writer.close();
         
         Login LoginMenu = new Login();
         LoginMenu.Login1();
@@ -61,8 +59,13 @@ public class CreateAccount {
     
         System.out.println("Please enter your First Name.");
         firstName = input.nextLine();
-        writer.write("FIRST = " + firstName);
-        writer.newLine();
+        firstName = "FIRST = " + firstName;
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println(firstName);
+        
+        
+    	}catch (IOException e) {
+        	}
         
     }
     
@@ -71,8 +74,13 @@ public class CreateAccount {
         
         System.out.println("Please enter your Last Name.");
         lastName = input.nextLine();
-        writer.write("LAST = " + lastName);
-        writer.newLine();
+        lastName = "LAST = " + lastName;
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println(lastName);
+        
+        
+    	}catch (IOException e) {
+        	}
     
     }
     
@@ -81,8 +89,13 @@ public class CreateAccount {
         
         System.out.println("Please enter your Email Address.");
         email = input.nextLine();
-        writer.write("EMAIL = " + email);
-        writer.newLine();
+        email = "EMAIL = " + email;
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println(email);
+        
+        
+    	}catch (IOException e) {
+        	}
     
     }
     
@@ -91,8 +104,13 @@ public class CreateAccount {
         
         System.out.println("Please enter where you are located.");
         location = input.nextLine();
-        writer.write("LOC = " + location);
-        writer.newLine();
+        location = "LOC = " + location;
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println(location);
+        
+        
+    	}catch (IOException e) {
+        	}
     
     }
     
@@ -102,8 +120,13 @@ public class CreateAccount {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Calendar cal = Calendar.getInstance();
         dateJoined = dateFormat.format(cal.getTime());
-        writer.write("DJ = " + dateJoined);
-        writer.newLine();
+        dateJoined = "DJ = " + dateJoined;
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println(dateJoined);
+        
+        
+    	}catch (IOException e) {
+        	}
         
     }
     
@@ -111,8 +134,13 @@ public class CreateAccount {
     public void setPassword() throws IOException{
         System.out.println("Please enter the password you'd like to use.");
         password = input.nextLine();
-        writer.write("PASS = " + password);
-        writer.newLine();
+        password = "PASS = " + password;
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println(password);
+        
+        
+    	}catch (IOException e) {
+        	}
     }
     
     //Set Username
@@ -126,8 +154,13 @@ public class CreateAccount {
             setUsername();
         } 
         else {
-            writer.write("USER = " + username);
-            writer.newLine();
+        	username = "USER = " + username;
+            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
+        	    out.println(username);
+            
+            
+        	}catch (IOException e) {
+            	}
             System.out.println("Your username is: " + username);
         }
         
