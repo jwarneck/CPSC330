@@ -25,9 +25,11 @@ public class Login {
     String choice;
     String user;
     String pass;
-    String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
+    //String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
+    String msgFile = "/twitterproject/messages.txt";
     boolean check, check2 = false;
-    
+    //File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
+    File file = new File("/twitterproject/messages.txt");
     User use = new User();
     
     BufferedReader br;
@@ -91,7 +93,7 @@ public class Login {
         System.out.println("3: View trending messages");
         System.out.println("-: View hashtag");
         System.out.println("4: View recent messages");
-        System.out.println("5: Logout and exit");
+        System.out.println("5: Logout and Return to main menu");
         System.out.println("");
         choice = input.nextLine();
         
@@ -126,15 +128,27 @@ public class Login {
         
         else if (choice.equals("4")){
             System.out.println("view recent messages");
-            System.out.println(br);
+            try {
+                Scanner sc = new Scanner(file);
+                while (sc.hasNextLine()){
+                    String line = sc.nextLine();
+                    System.out.println(line);
+                }
+                sc.close();
+            }
             
+            catch (FileNotFoundException e) {
+            }
+            System.out.println(" ");
+            loginMenu();
             
             
         }
         
         else if (choice.equals("5")){
             System.out.println("Logged out");
-            System.exit(0);
+            Menu menu = new Menu();
+            menu.Menu();
             
         }
         

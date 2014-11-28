@@ -40,7 +40,7 @@ public class createPost {
     public void createPost() throws IOException{
         setMessage();
         charLimit();
-        postMessage();
+        //postMessage();
         test.loginMenu();
     }
     
@@ -84,8 +84,12 @@ public class createPost {
         
     	message = "Author: " + author + " : " + message + " [Favourited: 0]" + "[Reposted: 0]";
 
-    	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {
+    	//try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {
+    	    //out.println(message);
+        
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/twitterproject/messages.txt", true)))) {
     	    out.println(message);
+        
     	}catch (IOException e) {
         	}
     	
@@ -104,7 +108,7 @@ public class createPost {
         
     }
     public void findPost(){
-    	    String filePath = "C:/Users/User/Desktop/dataFile.txt";
+    	    String filePath = "/twitterproject/messages.txt";
     	    BufferedReader br;
     	    String inputSearch = "Author:" + author;
     	    String line = "";

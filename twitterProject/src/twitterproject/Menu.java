@@ -7,6 +7,7 @@
 package twitterproject;
 
 import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -15,7 +16,10 @@ import java.util.*;
  */
 public class Menu {
         public static void Menu() throws IOException{
-        
+            
+        //File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
+        File file = new File("/twitterproject/messages.txt");
+            
         Scanner input = new Scanner(System.in);
         String choice;
         
@@ -47,6 +51,19 @@ public class Menu {
         
         else if (choice.equals("3")){
             System.out.println("Message list");
+            
+            try {
+                Scanner sc = new Scanner(file);
+                while (sc.hasNextLine()){
+                    String line = sc.nextLine();
+                    System.out.println(line);
+                }
+                sc.close();
+            }
+            
+            catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
             
             // print all recent stored messages
             // set limit to print n messages?

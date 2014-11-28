@@ -29,6 +29,7 @@ public class CreateAccount {
     String password;
     String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt";
     BufferedWriter writer;
+    String whole;
     
     
     
@@ -48,6 +49,8 @@ public class CreateAccount {
         setDateJoined();
         setUsername();
         setPassword();
+        writer.write("\n");
+        //writer.write(whole);
         writer.close();
         
         Login LoginMenu = new Login();
@@ -157,13 +160,14 @@ public class CreateAccount {
                 sb.append(line);
                 sb.append("\n");
                 //line = br.readLine();
+                whole = line;
                 
             }
             
-            String THIS = sb.toString();
-            System.out.println("");
-            System.out.println("print SB");
-            System.out.println(THIS);
+            //String THIS = sb.toString();
+            //System.out.println("");
+            //System.out.println("print SB");
+            //System.out.println(THIS);
             
             return sb.toString();
         }
@@ -171,4 +175,5 @@ public class CreateAccount {
             br.close();
         }
     }
+    
 }

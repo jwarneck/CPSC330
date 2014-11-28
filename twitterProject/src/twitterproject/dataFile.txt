@@ -1,8 +1,0 @@
-
-FIRST = Jordan
-LAST = warnecke
-EMAIL = jw@email.com
-LOC = arlington
-DJ = 11/27/2014
-USER = jwarneck
-PASS = 1234
