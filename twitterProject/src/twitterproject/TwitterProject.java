@@ -6,6 +6,8 @@
 
 package twitterproject;
 
+import java.io.IOException;
+
 /**
  *
  * @author jordanwarnecke
@@ -20,7 +22,7 @@ public class TwitterProject {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Menu.Menu();
     }
     

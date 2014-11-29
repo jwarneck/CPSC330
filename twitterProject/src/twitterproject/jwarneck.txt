@@ -1,0 +1,9 @@
+USER = jwarneck
+PASS = 1234
+FIRST = Jordan
+LAST = warnekd
+EMAIL = asdflk
+LOC = sadf
+DJ = 11/29/2014
+
+
