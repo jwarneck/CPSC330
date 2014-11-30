@@ -77,7 +77,7 @@ public class Menu {
         }
         */
         else if (choice.equals("4")){
-            System.out.println("Logged out successfully.");
+            //System.out.println("Logged out successfully.");
             System.exit(0);
         }
         

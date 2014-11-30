@@ -33,15 +33,19 @@ public class User {
     
     Scanner input = new Scanner(System.in);
     
-    private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
+    //private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
+    private final static Charset ENCODING = StandardCharsets.UTF_8;
     
     
     //read files with structured data
-    public final void processLineByLine() throws IOException{
+    public final void processLineByLine(String hats) throws IOException{
         //Path something = fFilePath;
+        username = hats;
+        //System.out.println(" LBL PATH USER = " + username);
         
-        System.out.println("PATH = " + fFilePath);
-        try (Scanner scanner =  new Scanner(fFilePath, ENCODING.name())){
+        Path fFilePath2 =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
+        //System.out.println("PATH = " + fFilePath);
+        try (Scanner scanner =  new Scanner(fFilePath2, ENCODING.name())){
             //System.out.println("processLBL try");
             while (scanner.hasNextLine()){
                 //System.out.println("processLBL while");
@@ -81,7 +85,17 @@ public class User {
         
         
         else {
-            log("Empty or invalid line. Unable to process.");
+            int count = 0;
+            if (count < 7){
+                //log("Empty or invalid line. Unable to process.");
+                count ++;
+            }
+            
+            else{
+                Menu in = new Menu();
+                in.Menu();
+            }
+            
             /**
             System.out.println("No account exists, would you like to create one?");
             System.out.println("(Y or N)");
@@ -103,22 +117,26 @@ public class User {
     }
     
     //private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
-    private final static Charset ENCODING = StandardCharsets.UTF_8;
+    
     //private final static String fileName = "/twitterproject/dataFile.txt";
     
     private static void log(Object aObject){
         System.out.println(String.valueOf(aObject));
         
     }
-    
+    public String getUser(){
+        return username;
+    }
     
     
     
     public String getUsername(String username) throws IOException{
-        
+        //System.out.println(" getUSERNAME = " + username);
         File f=  new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
         if (f.exists()){
-            processLineByLine();
+            //passUSER(username);
+            processLineByLine(username);
+            
             return username;
         }
         
@@ -129,6 +147,8 @@ public class User {
             return "NO DICE";
         }
         
+        
+        
         /**
         thing = "USER";
         processLineByLine();
@@ -138,17 +158,19 @@ public class User {
         */
     }
     
+    
     public void setUsername(String newUsername){
         username = newUsername;
         thing = USER;
-        
-       
     }
+       
+       
+    
     
     public String getPassword() throws IOException{
-        
+        //System.out.println("PASS: " + password);
         thing = "PASS";
-        processLineByLine();
+        processLineByLine(username);
         //System.out.println("THING 2: " + thing2);
         password = thing2;
         return password;
@@ -162,7 +184,7 @@ public class User {
     
     public String getEmail() throws IOException{
         thing = "EMAIL";
-        processLineByLine();
+        processLineByLine(thing);
         //System.out.println("THING 2: " + thing2);
         email = thing2;
         return email;

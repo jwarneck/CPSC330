@@ -31,21 +31,18 @@ public class createPost {
     Login test = new Login();
     User stuff = new User();
     String author;
-
-    public createPost() throws IOException {
-        this.author = stuff.getUsername(author);
-    }
     
     
     public void createPost() throws IOException{
+        this.author = stuff.getUser();
         setMessage();
-        charLimit();
+       // charLimit();
         //postMessage();
-        test.loginMenu();
+        //test.loginMenu();
     }
     
-    public void setMessage(){
-        System.out.println("Type your message, or 1 to cancel. message must be under 140 characters: ");
+    public void setMessage() throws IOException{
+        System.out.println("Type your message, or 1 to cancel. Message must be under 140 characters: ");
         message = input.nextLine();
         cancelPost();
         charLimit();
@@ -68,6 +65,7 @@ public class createPost {
             System.out.println("");
             System.out.println("Message posted successfully! Returning to main menu.");
             System.out.println("");
+            test.loginMenu();
         
         }
         
