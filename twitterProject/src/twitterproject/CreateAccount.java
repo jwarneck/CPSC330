@@ -6,10 +6,11 @@
 
 package twitterproject;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.BufferedWriter;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.*;
@@ -52,14 +53,14 @@ public class CreateAccount {
         //setPassword();
         //writer.write("\n" + whole);
         
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
-    	    out.println("\n");
+       // try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+    	   // out.println("\n");
         
-    	}catch (IOException e) {
-        	}
+    	//}catch (IOException e) {
+        //	}
         
-        Menu LoginMenu = new Menu();
-        LoginMenu.Menu();
+        Menu Menu = new Menu();
+        Menu.Menu();
     }
     
     //Set User's first name
@@ -183,18 +184,35 @@ public class CreateAccount {
         */	
            // try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
            //	    out.println(username);
-                String USERNAME = username;
-            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
-    	    out.println("USER = " + USERNAME);
         
-    	}catch (IOException e) {
+        
+            File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt"); 
+            if(f.exists()) {
+                System.out.println("That Username is already in use, please try");
+                System.out.println("a different one.");
+                Menu.Menu();
+            
+            }
+            else {
+                try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+                out.println("USER = " + username);
+                
+                }
+                catch (IOException e) {
         	}
+            	System.out.println("Your username is: " + username);
+                
+            }
+           
+    	}
+        
+        
             	
-            System.out.println("Your username is: " + username);
+            //System.out.println("Your username is: " + username);
         //}
         
         
-    }
+    
     String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt";
     //Check if Username is available
    

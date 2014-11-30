@@ -49,6 +49,15 @@ public class Login {
             if (user.equals(use.getUsername(user))){
                 check = true;
             }
+            
+            //JAMES' CODE
+            File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + user + ".txt");
+            if(f.exists()){}
+            else{
+                Menu.Menu();
+            }
+            
+            
         }
         System.out.println("Please enter your password:");
         pass = input.nextLine();

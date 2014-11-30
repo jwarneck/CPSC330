@@ -33,10 +33,14 @@ public class User {
     
     Scanner input = new Scanner(System.in);
     
+    private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
     
     
     //read files with structured data
     public final void processLineByLine() throws IOException{
+        //Path something = fFilePath;
+        
+        System.out.println("PATH = " + fFilePath);
         try (Scanner scanner =  new Scanner(fFilePath, ENCODING.name())){
             //System.out.println("processLBL try");
             while (scanner.hasNextLine()){
@@ -45,6 +49,13 @@ public class User {
             }
         }
     }
+    
+    /**
+    public String passUSER(String User){
+        username = User;
+        return username;
+    }
+    */
     
     //process lines
     protected void processLine(String aLine) throws IOException{
@@ -91,7 +102,7 @@ public class User {
         
     }
     
-    private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
+    //private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
     private final static Charset ENCODING = StandardCharsets.UTF_8;
     //private final static String fileName = "/twitterproject/dataFile.txt";
     
@@ -107,6 +118,7 @@ public class User {
         
         File f=  new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
         if (f.exists()){
+            processLineByLine();
             return username;
         }
         
