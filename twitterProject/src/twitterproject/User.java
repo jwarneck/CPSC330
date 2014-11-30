@@ -34,6 +34,9 @@ public class User {
     
     Scanner input = new Scanner(System.in);
     
+    //createPost that = new createPost();
+    
+    
     //private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
     private final static Charset ENCODING = StandardCharsets.UTF_8;
     
@@ -125,11 +128,7 @@ public class User {
         System.out.println(String.valueOf(aObject));
         
     }
-    public String getUser(){
-        username = THAT;
-        return username;
-    }
-    
+
     
     
     public String getUsername(String username) throws IOException{
@@ -138,6 +137,7 @@ public class User {
         if (f.exists()){
             //passUSER(username);
             processLineByLine(username);
+            //create.getU(username);
             THAT = username;
             return username;
         }

@@ -35,14 +35,21 @@ public class createPost {
     
     
     public void createPost() throws IOException{
-        this.author = stuff.getUser();
-        System.out.println(this.author);
+        
+        System.out.println("AUTHOR: " + author);
         System.out.println("CREATE POST");
         setMessage();
        // charLimit();
         //postMessage();
         //test.loginMenu();
     }
+    
+    /**
+    public void getU(String username){
+        this.author = username;
+        //return author;
+    }
+    */
     
     public void setMessage() throws IOException{
         

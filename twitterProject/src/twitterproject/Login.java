@@ -30,6 +30,8 @@ public class Login {
     File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
     //File file = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt");
     User use = new User();
+    //createPost post = new createPost();
+    
     
     BufferedReader br;
 
@@ -47,6 +49,9 @@ public class Login {
         System.out.println("");
         System.out.println("Please enter your User Name:");
         user = input.nextLine();
+        
+        
+        
         while (check == false){
             if (user.equals(use.getUsername(user))){
                 check = true;
@@ -73,24 +78,6 @@ public class Login {
         if ((check == true) && (check2 == true)){
             loginMenu();
         }
-        
-        /**
-        else {
-            System.out.println("No account exists, would you like to create one?");
-            System.out.println("(Y or N)");
-            String that = input.nextLine();
-            
-            if(that.equals("Y")){
-                CreateAccount account = new CreateAccount();
-                account.CreateAccount();
-            }
-            
-            else {
-                System.exit(0);
-            }
-        }
-        */
-        
         
     }
     
