@@ -30,6 +30,7 @@ public class createPost {
     Scanner input = new Scanner(System.in);
     Login test = new Login();
     User stuff = new User();
+    
     String author;
     
     
