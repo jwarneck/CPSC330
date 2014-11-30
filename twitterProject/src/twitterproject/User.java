@@ -29,6 +29,7 @@ public class User {
     String email;
     String newLocation;
     String newEmail;
+    String THAT;
     boolean check = false;
     
     Scanner input = new Scanner(System.in);
@@ -125,7 +126,7 @@ public class User {
         
     }
     public String getUser(){
-        
+        username = THAT;
         return username;
     }
     
@@ -137,7 +138,7 @@ public class User {
         if (f.exists()){
             //passUSER(username);
             processLineByLine(username);
-            
+            THAT = username;
             return username;
         }
         

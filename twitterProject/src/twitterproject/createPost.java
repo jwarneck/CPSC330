@@ -35,6 +35,8 @@ public class createPost {
     
     public void createPost() throws IOException{
         this.author = stuff.getUser();
+        System.out.println(this.author);
+        System.out.println("CREATE POST");
         setMessage();
        // charLimit();
         //postMessage();
@@ -42,11 +44,15 @@ public class createPost {
     }
     
     public void setMessage() throws IOException{
+        author = stuff.getUser();
+        System.out.println("Author = " + author);
+        System.out.println(" ");
         System.out.println("Type your message, or 1 to cancel. Message must be under 140 characters: ");
         message = input.nextLine();
-        cancelPost();
+        //cancelPost();
         charLimit();
         if (message.equals("1")) {
+                System.out.println("MESSAGE CANCELLED");
         	cancelPost();
         }
         
@@ -80,10 +86,15 @@ public class createPost {
         
         
         
-    	message = "Author: " + author + " : " + message + " [Favourited: 0]" + "[Reposted: 0]";
+    	String POST = "Author: " + author + " Date Posted: " + datePosted + " Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]";
 
+        System.out.println(POST);
+        
     	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {
-    	    out.println(message);
+    	    out.println(POST);
+            
+            //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt", true)))) {
+    	    //out.println(message);
         
         
     	}catch (IOException e) {
@@ -94,9 +105,9 @@ public class createPost {
         
     }
     
-    public void cancelPost(){
-        //Login newLogin = new Login();
-        //newLogin.loginMenu();
+    public void cancelPost() throws IOException{
+        Login newLogin = new Login();
+        newLogin.loginMenu();
     }
     
     public void charLimit(){
@@ -105,6 +116,7 @@ public class createPost {
     }
     public void findPost(){
     	    String filePath = "/Users/jordanwarnecke/GitHub/CPSC330/twitterroject/src/twitterproject/messages.txt";
+            //String filePath = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     	    BufferedReader br;
     	    String inputSearch = "Author:" + author;
     	    String line = "";

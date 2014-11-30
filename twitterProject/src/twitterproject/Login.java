@@ -25,8 +25,10 @@ public class Login {
     String user;
     String pass;
     String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
+    //String msgFile = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
     File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
+    //File file = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt");
     User use = new User();
     
     BufferedReader br;
@@ -52,6 +54,7 @@ public class Login {
             
             //JAMES' CODE
             File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + user + ".txt");
+            //File f = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/" + user + ".txt");
             if(f.exists()){}
             else{
                 Menu.Menu();
