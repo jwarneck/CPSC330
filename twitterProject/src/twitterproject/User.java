@@ -34,7 +34,7 @@ public class User {
     
     Scanner input = new Scanner(System.in);
     
-    //createPost that = new createPost();
+    
     
     
     //private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
@@ -58,12 +58,6 @@ public class User {
         }
     }
     
-    /**
-    public String passUSER(String User){
-        username = User;
-        return username;
-    }
-    */
     
     //process lines
     protected void processLine(String aLine) throws IOException{

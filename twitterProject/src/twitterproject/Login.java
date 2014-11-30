@@ -35,15 +35,7 @@ public class Login {
     
     BufferedReader br;
 
-    /**
-    public Login() {
-        try {
-            this.br = new BufferedReader(new FileReader(msgFile));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    **/
+    
     
     public void Login1() throws IOException{
         System.out.println("");

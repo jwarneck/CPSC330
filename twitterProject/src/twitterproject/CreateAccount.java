@@ -29,8 +29,6 @@ public class CreateAccount {
     String dateJoined;
     String username;
     String password;
-    //String filename = "/C:/Users/User/Desktop/dataFile.txt";
-    //String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt";
     BufferedWriter writer;
     String whole;
     
@@ -50,14 +48,6 @@ public class CreateAccount {
         setLocation();
         setDateJoined();
         
-        //setPassword();
-        //writer.write("\n" + whole);
-        
-       // try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
-    	   // out.println("\n");
-        
-    	//}catch (IOException e) {
-        //	}
         
         Menu Menu = new Menu();
         Menu.Menu();
@@ -174,18 +164,7 @@ public class CreateAccount {
         
         System.out.println("Please enter the Username you'd like to have.");
         username = input.nextLine();
-        /**
-        boolean check = checkUsername(username);
-        if (check == true) {
-            System.out.println("Username already in use, please try again.");
-            setUsername();
-        } 
-        else {
-        */	
-           // try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
-           //	    out.println(username);
-        
-        
+
             File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt"); 
             if(f.exists()) {
                 System.out.println("That Username is already in use, please try");
