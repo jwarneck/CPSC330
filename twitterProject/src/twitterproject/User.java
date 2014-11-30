@@ -91,7 +91,7 @@ public class User {
         
     }
     
-    private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/dataFile.txt");
+    private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
     private final static Charset ENCODING = StandardCharsets.UTF_8;
     //private final static String fileName = "/twitterproject/dataFile.txt";
     
@@ -103,14 +103,27 @@ public class User {
     
     
     
-    public String getUsername() throws IOException{
+    public String getUsername(String username) throws IOException{
         
+        File f=  new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
+        if (f.exists()){
+            return username;
+        }
+        
+        else{
+            System.out.println("No account with Username: " + username + " found.");
+            System.out.println("Please create a new account.");
+            Menu.Menu();
+            return "NO DICE";
+        }
+        
+        /**
         thing = "USER";
         processLineByLine();
         //System.out.println("THING 2: " + thing2);
         username = thing2;
         return username;
-        
+        */
     }
     
     public void setUsername(String newUsername){

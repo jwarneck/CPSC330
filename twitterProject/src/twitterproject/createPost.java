@@ -33,7 +33,7 @@ public class createPost {
     String author;
 
     public createPost() throws IOException {
-        this.author = stuff.getUsername();
+        this.author = stuff.getUsername(author);
     }
     
     

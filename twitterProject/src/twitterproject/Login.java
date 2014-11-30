@@ -46,7 +46,7 @@ public class Login {
         System.out.println("Please enter your User Name:");
         user = input.nextLine();
         while (check == false){
-            if (user.equals(use.getUsername())){
+            if (user.equals(use.getUsername(user))){
                 check = true;
             }
         }
