@@ -47,7 +47,7 @@ public class User {
         username = hats;
         //System.out.println(" LBL PATH USER = " + username);
         
-        Path fFilePath2 =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
+        Path fFilePath2 =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
         //System.out.println("PATH = " + fFilePath);
         try (Scanner scanner =  new Scanner(fFilePath2, ENCODING.name())){
             //System.out.println("processLBL try");
@@ -94,21 +94,6 @@ public class User {
                 in.Menu();
             }
             
-            /**
-            System.out.println("No account exists, would you like to create one?");
-            System.out.println("(Y or N)");
-            String that = input.nextLine();
-            
-            if(that.equals("Y")){
-                CreateAccount account = new CreateAccount();
-                account.CreateAccount();
-            }
-            
-            else {
-                System.exit(0);
-            }
-            */
-            
             
         }
         
@@ -127,11 +112,12 @@ public class User {
     
     public String getUsername(String username) throws IOException{
         //System.out.println(" getUSERNAME = " + username);
-        File f=  new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
+        File f=  new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
         if (f.exists()){
-            //passUSER(username);
+            
             processLineByLine(username);
-            //create.getU(username);
+            //createPost roy = new createPost();
+            //roy.getU(username);
             THAT = username;
             return username;
         }
@@ -143,19 +129,17 @@ public class User {
             return "NO DICE";
         }
         
-        
-        
-        /**
-        thing = "USER";
-        processLineByLine();
-        //System.out.println("THING 2: " + thing2);
-        username = thing2;
-        return username;
-        */
+
     }
-    
+
+    public String getU(){
+        THAT = thing;
+        return THAT;
+    }
+
     
     public void setUsername(String newUsername){
+
         username = newUsername;
         thing = USER;
     }

@@ -62,7 +62,7 @@ public class CreateAccount {
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	    //out.println(firstName);
         
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
     	    out.println(firstName);
         
         
@@ -80,7 +80,7 @@ public class CreateAccount {
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	   // out.println(lastName);
         
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
     	    out.println(lastName);
         
         
@@ -98,7 +98,7 @@ public class CreateAccount {
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	  //  out.println(email);
             
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
     	    out.println(email);
         
         
@@ -116,7 +116,7 @@ public class CreateAccount {
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	//    out.println(location);
         
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
     	    out.println(location);
         
         
@@ -135,7 +135,7 @@ public class CreateAccount {
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	//    out.println(dateJoined);
         
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
     	    out.println(dateJoined);
         
     	}catch (IOException e) {
@@ -151,7 +151,7 @@ public class CreateAccount {
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	//    out.println(password);
         
-        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
     	    out.println(password);
         
     	}catch (IOException e) {
@@ -165,7 +165,7 @@ public class CreateAccount {
         System.out.println("Please enter the Username you'd like to have.");
         username = input.nextLine();
 
-            File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt"); 
+            File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt"); 
             if(f.exists()) {
                 System.out.println("That Username is already in use, please try");
                 System.out.println("a different one.");
@@ -173,7 +173,7 @@ public class CreateAccount {
             
             }
             else {
-                try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt", true)))) {
+                try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
                 out.println("USER = " + username);
                 
                 }
@@ -192,7 +192,7 @@ public class CreateAccount {
         
         
     
-    String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt";
+    String filename = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt";
     //Check if Username is available
    
     public boolean checkUsername(String username)throws IOException{

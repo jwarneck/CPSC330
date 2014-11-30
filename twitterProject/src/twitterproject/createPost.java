@@ -30,18 +30,15 @@ public class createPost {
     Scanner input = new Scanner(System.in);
     Login test = new Login();
     User stuff = new User();
-    
     String author;
     
     
-    public void createPost() throws IOException{
-        
+    public void createPost(String username) throws IOException{
+        this.author = username;
         System.out.println("AUTHOR: " + author);
         System.out.println("CREATE POST");
         setMessage();
-       // charLimit();
-        //postMessage();
-        //test.loginMenu();
+
     }
     
     /**
@@ -55,7 +52,7 @@ public class createPost {
         
         System.out.println("Type your message, or 1 to cancel. Message must be under 140 characters: ");
         message = input.nextLine();
-        //cancelPost();
+        
         charLimit();
         if (message.equals("1")) {
                 System.out.println("MESSAGE CANCELLED");
@@ -85,14 +82,12 @@ public class createPost {
     }
     
     public void postMessage(){
-    	//author = account.getUsername();
     	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Calendar cal = Calendar.getInstance();
         datePosted = dateFormat.format(cal.getTime());
         
         
-        
-    	String POST = "Author: " + author + " Date Posted: " + datePosted + " Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]";
+    	String POST = "Author: " + this.author + " Date Posted: " + datePosted + " Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]";
 
         System.out.println(POST);
         
@@ -125,7 +120,7 @@ public class createPost {
             //String filePath = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     	    BufferedReader br;
     	    String inputSearch = "Author:" + author;
-    	    String line = "";
+    	    String line = " ";
 
     	    try {
     	        br = new BufferedReader(new FileReader(filePath));
@@ -145,11 +140,11 @@ public class createPost {
     	            br.close();
     	        } catch (IOException e) {
     	            
-    	            e.printStackTrace();
+    	            //e.printStackTrace();
     	        }
     	    } catch (FileNotFoundException e) {
     	        
-    	        e.printStackTrace();
+    	        //e.printStackTrace();
     	    }
 
     	}

@@ -83,16 +83,19 @@ public class EditProfile {
         
         else if (choice.equals("2")){
             System.out.println("Change Password");
+            changePassword();
             
         }
         
         else if (choice.equals("3")){
             System.out.println("Change Location");
+            changeLocation();
             
         }
         
         else if (choice.equals("4")){
             System.out.println("Change Email Address");
+            changeEmail();
             
         }
         

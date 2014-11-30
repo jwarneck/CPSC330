@@ -50,7 +50,7 @@ public class Login {
             }
             
             //JAMES' CODE
-            File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + user + ".txt");
+            File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + user + ".txt");
             //File f = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/" + user + ".txt");
             if(f.exists()){}
             else{
@@ -93,7 +93,7 @@ public class Login {
         else if (choice.equals("2")){
             System.out.println("post new");
             createPost post = new createPost();
-            post.createPost();
+            post.createPost(user);
             
         }
         
