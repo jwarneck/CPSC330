@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package twitterproject;
 
+import java.io.IOException;
+import java.io.BufferedReader;
 //import java.io.FileReader;
 import java.io.*;
 import java.util.*;
@@ -21,9 +24,11 @@ public class Login {
     String choice;
     String user;
     String pass;
-    String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
+    //String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
+    String msgFile = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
-    File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
+    //File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
+    File file = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt");
     User use = new User();
     
     BufferedReader br;
@@ -43,14 +48,19 @@ public class Login {
         System.out.println("Please enter your User Name:");
         user = input.nextLine();
         while (check == false){
-            if (user.equals(use.getUsername())){
+            if (user.equals(use.getUsername(user))){
                 check = true;
             }
-            File f = new File("C:/Users/User/Desktop/" + user + ".txt"); 
-            if(f.exists()) {}
-            else {
-            	Menu.Menu();
+            
+            //JAMES' CODE
+            //File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + user + ".txt");
+            File f = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/" + user + ".txt");
+            if(f.exists()){}
+            else{
+                Menu.Menu();
             }
+            
+            
         }
         System.out.println("Please enter your password:");
         pass = input.nextLine();
@@ -104,7 +114,7 @@ public class Login {
         else if (choice.equals("2")){
             System.out.println("post new");
             createPost post = new createPost();
-            post.createPost();
+            post.createPost(user);
             
         }
         
