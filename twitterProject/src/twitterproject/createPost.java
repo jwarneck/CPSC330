@@ -44,9 +44,7 @@ public class createPost {
     }
     
     public void setMessage() throws IOException{
-        author = stuff.getUser();
-        System.out.println("Author = " + author);
-        System.out.println(" ");
+        
         System.out.println("Type your message, or 1 to cancel. Message must be under 140 characters: ");
         message = input.nextLine();
         //cancelPost();
