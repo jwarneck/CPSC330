@@ -1,9 +1,7 @@
-USER = jwarneck
-PASS = 1234
-FIRST = Jordan
-LAST = Warnecke
-EMAIL = jordan
-LOC = arlington
-DJ = 11/29/2014
-
-
+USER : jwarneck
+PASS : 4321
+FIRST : Jordan
+LAST : Warnecke
+EMAIL : jordan
+LOC : arlington
+DJ : 11/29/2014

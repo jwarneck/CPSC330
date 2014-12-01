@@ -24,13 +24,18 @@ public class Login {
     String choice;
     String user;
     String pass;
+    String email;
+    String location;
+    String first;
+    String last;
+    String joined;
     String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
     //String msgFile = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
     File file = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt");
     //File file = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt");
     User use = new User();
-    //createPost post = new createPost();
+    
     
     
     BufferedReader br;
@@ -41,9 +46,6 @@ public class Login {
         System.out.println("");
         System.out.println("Please enter your User Name:");
         user = input.nextLine();
-        
-        
-        
         while (check == false){
             if (user.equals(use.getUsername(user))){
                 check = true;
@@ -86,8 +88,14 @@ public class Login {
         choice = input.nextLine();
         
         if (choice.equals("1")){
+            email = use.getEmail();
+            location = use.getLocation();
+            first = use.getFirst();
+            last = use.getLast();
+            joined = use.getJoined();
+            
             EditProfile account = new EditProfile();
-            account.EditProfile();
+            account.EditProfile(email, joined, first, last, location, user, pass);
         }
         
         else if (choice.equals("2")){

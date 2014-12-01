@@ -29,10 +29,16 @@ public class User {
     String email;
     String newLocation;
     String newEmail;
+    String location;
+    String first;
+    String last;
+    String joined;
     String THAT;
     boolean check = false;
     
     Scanner input = new Scanner(System.in);
+    
+    
     
     
     
@@ -48,7 +54,7 @@ public class User {
         //System.out.println(" LBL PATH USER = " + username);
         
         Path fFilePath2 =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
-        //System.out.println("PATH = " + fFilePath);
+        //System.out.println("PATH = " + fFilePath2);
         try (Scanner scanner =  new Scanner(fFilePath2, ENCODING.name())){
             //System.out.println("processLBL try");
             while (scanner.hasNextLine()){
@@ -116,9 +122,7 @@ public class User {
         if (f.exists()){
             
             processLineByLine(username);
-            //createPost roy = new createPost();
-            //roy.getU(username);
-            THAT = username;
+            
             return username;
         }
         
@@ -143,10 +147,7 @@ public class User {
         username = newUsername;
         thing = USER;
     }
-       
-       
-    
-    
+
     public String getPassword() throws IOException{
         //System.out.println("PASS: " + password);
         thing = "PASS";
@@ -157,27 +158,59 @@ public class User {
         
     }
     
-    public void setPassword(String newPassword){
+    public void setPassword(String newPassword) throws IOException{
         password = newPassword;
         System.out.println("NEW PASSWORD SET");
+        Login some = new Login();
+        some.loginMenu();
     }
     
     public String getEmail() throws IOException{
         thing = "EMAIL";
-        processLineByLine(thing);
+        processLineByLine(username);
         //System.out.println("THING 2: " + thing2);
         email = thing2;
+        Login some = new Login();
+        some.loginMenu();
         return email;
     }
     
-    public void setLocation(String location){
+    public void setLocation(String location) throws IOException{
         newLocation = location;
         System.out.println("NEW LOCATION = " + newLocation);
+        Login some = new Login();
+        some.loginMenu();
     }
 
-    public void setEmail(String email){
+    public void setEmail(String email) throws IOException{
         newEmail = email;
         System.out.println("NEW EMAIL = " + newEmail);
+        Login some = new Login();
+        some.loginMenu();
     }
-
+    
+    public String getLocation() throws IOException{
+    	thing = "LOC";
+    	processLineByLine(username);
+    	location = thing2;
+    	return location;
+    }
+    public String getFirst() throws IOException{
+    	thing = "FIRST";
+    	processLineByLine(username);
+    	first = thing2;
+    	return first;
+    }
+    public String getLast() throws IOException{
+    	thing = "LAST";
+    	processLineByLine(username);
+    	last = thing2;
+    	return last;
+    }
+    public String getJoined() throws IOException{
+    	thing = "DJ";
+    	processLineByLine(username);
+    	joined = thing2;
+    	return joined;
+    }
 }

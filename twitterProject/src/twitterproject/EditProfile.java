@@ -6,7 +6,12 @@
 
 package twitterproject;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 /**
@@ -25,43 +30,117 @@ public class EditProfile {
     String password;
     String location;
     String email;
+    String joined;
+    String first;
+    String last;
     
     User set = new User();
     User get = new User();
     
     
-    public void EditProfile() throws IOException{
+    public void EditProfile(String thisEmail, String thisJoined,String thisFirst, String thisLast, String thisLocation, String thisUser, String thisPass) throws IOException{
+        email = thisEmail;
+    	joined = thisJoined;
+    	first = thisFirst;
+    	last = thisLast;
+    	location = thisLocation;
+    	username = thisUser;
+    	password = thisPass;
+        
         editMenu();
     }
     
     public void changeUsername (){
         //user enters new desired username
         //bool statement checking username
-        
+        System.out.println("Enter your new username: ");
+        newUsername = input.nextLine();
         
         if (USER == true){
             username = newUsername;
             
             set.setUsername(username);
         }
-        else
+        else{
             System.out.println("Username already in use, please try again.");
+            changeUsername();
+        }
         
     }
     
-    public void changePassword (){
-        password = newPassword;
+    public void changePassword () throws FileNotFoundException, IOException{
+        System.out.println("Enter your new password: ");
+        newPassword = input.nextLine();
+        //PrintWriter writer = new PrintWriter("C:/Users/User/Desktop/dataFile.txt");
+        PrintWriter writer = new PrintWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
+        writer.print("");
+        writer.close();
+
+        
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
+            out.println("USER : " + username);
+    	    out.println("PASS : " + newPassword);
+    	    out.println("FIRST : " + first);
+    	    out.println("LAST : " + last);
+    	    out.println("EMAIL : " + email);
+    	    out.println("LOC : " + location);
+    	    out.println("DJ : " + joined);
+        
+        
+    	}catch (IOException e) {
+        	}
+        
         set.setPassword(newPassword);
     }
     
-    public void changeLocation (){
-        location = newLocation;
-        set.setLocation(location);
+    public void changeLocation () throws FileNotFoundException, IOException{
+        System.out.println("Enter your new location: ");
+        newLocation = input.nextLine();
+        //PrintWriter writer = new PrintWriter("C:/Users/User/Desktop/dataFile.txt");
+        PrintWriter writer = new PrintWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
+        writer.print("");
+        writer.close();
+        
+        try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
+            //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println("USER : " + username);
+    	    out.println("PASS : " + password);
+    	    out.println("FIRST : " + first);
+    	    out.println("LAST : " + last);
+    	    out.println("EMAIL : " + email);
+    	    out.println("LOC : " + newLocation);
+    	    out.println("DJ : " + joined);
+        
+        
+    	}catch (IOException e) {
+        	}
+        
+        set.setLocation(newLocation);
     }
     
-    public void changeEmail (){
-        email = newEmail;
-        set.setEmail(email);
+    public void changeEmail () throws FileNotFoundException, IOException{
+        System.out.println("Enter your new email: ");
+        newEmail = input.nextLine();
+        //PrintWriter writer = new PrintWriter("C:/Users/User/Desktop/dataFile.txt");
+        PrintWriter writer = new PrintWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
+        writer.print("");
+        writer.close();
+        
+         try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
+        //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/dataFile.txt", true)))) {
+    	    out.println("USER : " + username);
+    	    out.println("PASS : " + password);
+    	    out.println("FIRST : " + first);
+    	    out.println("LAST : " + last);
+    	    out.println("EMAIL : " + newEmail);
+    	    out.println("LOC : " + location);
+    	    out.println("DJ : " + joined);
+        
+        
+    	}catch (IOException e) {
+        	}
+        set.setEmail(newEmail);
     }
 
     public void editMenu() throws IOException{
