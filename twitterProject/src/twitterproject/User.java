@@ -53,14 +53,14 @@ public class User {
     public final void processLineByLine(String hats) throws IOException{
         //Path something = fFilePath;
         username = hats;
-        System.out.println(" LBL PATH USER = " + username);
+        //System.out.println(" LBL PATH USER = " + username);
         
         Path fFilePath2 =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
-        System.out.println("PATH = " + fFilePath2);
+        //System.out.println("PATH = " + fFilePath2);
         try (Scanner scanner =  new Scanner(fFilePath2, ENCODING.name())){
-            System.out.println("processLBL try");
+            //System.out.println("processLBL try");
             while (scanner.hasNextLine()){
-                System.out.println("processLBL while");
+                //System.out.println("processLBL while");
                 processLine(scanner.nextLine());
             }
         }
@@ -72,7 +72,7 @@ public class User {
         Scanner scanner = new Scanner(aLine);
         scanner.useDelimiter(" : ");
         if (scanner.hasNext()){
-            System.out.println("THING IS: " + thing);
+            //System.out.println("THING IS: " + thing);
             if (scanner.next().equals(thing)){
                 thing2 = scanner.next();
                 //System.out.println("THING 2: " + thing2);
@@ -150,10 +150,8 @@ public class User {
     }
 
     public String getPassword() throws IOException{
-        //System.out.println("PASS: " + password);
         thing = "PASS";
         processLineByLine(username);
-        //System.out.println("THING 2: " + thing2);
         password = thing2;
         return password;
         
@@ -162,8 +160,8 @@ public class User {
     public void setPassword(String newPassword) throws IOException{
         password = newPassword;
         System.out.println("NEW PASSWORD SET");
-        EditProfile some = new EditProfile();
-        some.editMenu();
+        Login some = new Login();
+        some.Login1();
     }
     
     public String getEmail() throws IOException{
@@ -178,27 +176,28 @@ public class User {
     public void setLocation(String location) throws IOException{
         newLocation = location;
         System.out.println("NEW LOCATION = " + newLocation);
-        EditProfile some = new EditProfile();
-        some.editMenu();
+        //EditProfile some = new EditProfile();
+        Login some = new Login();
+        some.Login1();
     }
 
     public void setEmail(String email) throws IOException{
         newEmail = email;
         System.out.println("NEW EMAIL = " + newEmail);
-        EditProfile some = new EditProfile();
-        some.editMenu();
+        Login some = new Login();
+        some.Login1();
     }
     
     public void setFirst(String First) throws IOException{
         newFirst = first;
-        EditProfile some = new EditProfile();
-        some.editMenu();
+        Login some = new Login();
+        some.Login1();
     }
     
     public void setLast(String First) throws IOException{
         newLast = last;
-        EditProfile some = new EditProfile();
-        some.editMenu();
+        Login some = new Login();
+        some.Login1();
     }
     
     public String getLocation() throws IOException{

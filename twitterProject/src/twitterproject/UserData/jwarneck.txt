@@ -1,7 +1,0 @@
-USER : jwarneck
-PASS : 1234
-FIRST : George
-LAST : yahoo.com
-EMAIL : this.com
-LOC : yahoo.com
-DJ : yahoo.com

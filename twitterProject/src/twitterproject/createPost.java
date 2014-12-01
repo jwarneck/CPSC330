@@ -35,18 +35,11 @@ public class createPost {
     
     public void createPost(String username) throws IOException{
         this.author = username;
-        System.out.println("AUTHOR: " + author);
-        System.out.println("CREATE POST");
+        //System.out.println("AUTHOR: " + author);
+        //System.out.println("CREATE POST");
         setMessage();
 
     }
-    
-    /**
-    public void getU(String username){
-        this.author = username;
-        //return author;
-    }
-    */
     
     public void setMessage() throws IOException{
         
@@ -74,7 +67,7 @@ public class createPost {
             System.out.println("");
             System.out.println("Message posted successfully! Returning to main menu.");
             System.out.println("");
-            test.loginMenu();
+            test.Login1();
         
         }
         
@@ -87,9 +80,9 @@ public class createPost {
         datePosted = dateFormat.format(cal.getTime());
         
         
-    	String POST = "Author: " + this.author + " Date Posted: " + datePosted + " Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]";
+    	String POST = "Author: " + this.author + " Date Posted: " + datePosted + "\n" + "Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]" + "\n";
 
-        System.out.println(POST);
+        //System.out.println(POST);
         
     	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {
     	    out.println(POST);
@@ -127,7 +120,6 @@ public class createPost {
     	        try {
     	            while((line = br.readLine()) != null)
     	            {
-    	                //System.out.println(line);
     	                String[] words = line.split(" ");
 
     	                for (String word : words) {

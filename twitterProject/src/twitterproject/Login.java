@@ -40,8 +40,6 @@ public class Login {
     
     BufferedReader br;
 
-    
-    
     public void Login1() throws IOException{
         System.out.println("");
         System.out.println("Please enter your User Name:");
@@ -55,6 +53,14 @@ public class Login {
             File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + user + ".txt");
             //File f = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/" + user + ".txt");
             if(f.exists()){}
+            
+            else if (!f.exists()){
+                System.out.println(" ");
+                System.out.println("No account with that name, please try again");
+                System.out.println(" or create an account.");
+                Menu.Menu();
+            }
+            
             else{
                 Menu.Menu();
             }
@@ -101,7 +107,7 @@ public class Login {
             joined = use.getJoined();
             
             EditProfile account = new EditProfile();
-            account.EditProfile(email, joined, first, last, location, user, pass);
+            account.EditProfile(email, first, joined, last, location, user, pass);
             account.editMenu();
         }
         

@@ -40,7 +40,7 @@ public class EditProfile {
     private String newFirst;
     
     
-    public void EditProfile(String thisEmail, String thisJoined,String thisFirst, String thisLast, String thisLocation, String thisUser, String thisPass) throws IOException{
+    public void EditProfile(String thisEmail, String thisJoined, String thisFirst, String thisLast, String thisLocation, String thisUser, String thisPass) throws IOException{
         email = thisEmail;
     	joined = thisJoined;
     	first = thisFirst;
@@ -238,7 +238,7 @@ public class EditProfile {
         
         else if (choice.equals("6")){
             System.out.println("Logged out ");
-            System.exit(0);
+            Menu.Menu();
             
         }
         

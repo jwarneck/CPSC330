@@ -46,6 +46,8 @@ public class Menu {
         }
         
         else if (choice.equals("3")){
+            System.out.println(" ");
+            System.out.println(" ");
             System.out.println("Message list");
             System.out.println(" ");
             
@@ -56,6 +58,8 @@ public class Menu {
                     System.out.println(line);
                 }
                 sc.close();
+                Menu back = new Menu();
+                back.Menu();
             }
             
             catch (FileNotFoundException e) {
