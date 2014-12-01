@@ -1,0 +1,7 @@
+USER : alyssa
+PASS : 1234
+FIRST : fds
+LAST : jew
+EMAIL : out
+LOC : j
+DJ : 12/01/2014

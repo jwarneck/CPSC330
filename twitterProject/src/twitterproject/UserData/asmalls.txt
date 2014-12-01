@@ -1,7 +1,0 @@
-USER = asmalls
-PASS = 4321
-FIRST = Alyssa
-LAST = Smalls
-EMAIL = asdf
-LOC = asdf
-DJ = 11/30/2014

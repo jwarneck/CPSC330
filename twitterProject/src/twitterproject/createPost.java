@@ -82,7 +82,7 @@ public class createPost {
     }
     
     public void postMessage(){
-    	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         Calendar cal = Calendar.getInstance();
         datePosted = dateFormat.format(cal.getTime());
         
