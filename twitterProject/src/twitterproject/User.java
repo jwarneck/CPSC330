@@ -51,14 +51,14 @@ public class User {
     public final void processLineByLine(String hats) throws IOException{
         //Path something = fFilePath;
         username = hats;
-        //System.out.println(" LBL PATH USER = " + username);
+        System.out.println(" LBL PATH USER = " + username);
         
         Path fFilePath2 =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
         //System.out.println("PATH = " + fFilePath2);
         try (Scanner scanner =  new Scanner(fFilePath2, ENCODING.name())){
-            //System.out.println("processLBL try");
+            System.out.println("processLBL try");
             while (scanner.hasNextLine()){
-                //System.out.println("processLBL while");
+                System.out.println("processLBL while");
                 processLine(scanner.nextLine());
             }
         }
@@ -68,7 +68,7 @@ public class User {
     //process lines
     protected void processLine(String aLine) throws IOException{
         Scanner scanner = new Scanner(aLine);
-        scanner.useDelimiter(" = ");
+        scanner.useDelimiter(" : ");
         if (scanner.hasNext()){
             //asumes line has a certain structure
             //System.out.println("THING IS: " + thing);
@@ -80,7 +80,7 @@ public class User {
             }
             
             else {
-                //System.out.println("processLine elseIN");
+                System.out.println("processLine elseIN");
                 if ( scanner.hasNextLine())
                     processLine(scanner.nextLine());
             }
@@ -90,7 +90,7 @@ public class User {
         
         else {
             int count = 0;
-            if (count < 7){
+            if (count < 15){
                 //log("Empty or invalid line. Unable to process.");
                 count ++;
             }
