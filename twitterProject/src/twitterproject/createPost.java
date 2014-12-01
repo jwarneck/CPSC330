@@ -48,8 +48,8 @@ public class createPost {
         
         charLimit();
         if (message.equals("1")) {
-                System.out.println("MESSAGE CANCELLED");
-        	cancelPost();
+            System.out.println("MESSAGE CANCELLED");
+            cancelPost();
         }
         
         else if (charCount > 140){
@@ -108,11 +108,11 @@ public class createPost {
     	charCount = message.length();
         
     }
-    public void findPost(){
+    public void findPost(String findIt){
     	    String filePath = "/Users/jordanwarnecke/GitHub/CPSC330/twitterroject/src/twitterproject/messages.txt";
             //String filePath = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     	    BufferedReader br;
-    	    String inputSearch = "Author:" + author;
+    	    String inputSearch = "Author:" + findIt;
     	    String line = " ";
 
     	    try {
@@ -124,7 +124,7 @@ public class createPost {
 
     	                for (String word : words) {
     	                  if (word.equals(inputSearch)) {
-    	                	  System.out.println(word + " ");
+                            System.out.println(word + " ");
     	                  }
     	                }
 

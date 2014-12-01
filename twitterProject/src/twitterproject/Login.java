@@ -29,6 +29,7 @@ public class Login {
     String first;
     String last;
     String joined;
+    String someone;
     String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
     //String msgFile = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
@@ -119,7 +120,11 @@ public class Login {
         }
         
         else if (choice.equals("3")){
-            System.out.println("view trending");
+            System.out.println("What user's messages would you like to see?");
+            someone = input.nextLine();
+            createPost view = new createPost();
+            view.findPost(someone);
+            
             
         }
         
