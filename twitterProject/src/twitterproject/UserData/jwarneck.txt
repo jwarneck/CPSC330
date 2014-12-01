@@ -1,0 +1,7 @@
+USER : jwarneck
+PASS : 1234
+FIRST : jordan
+LAST : Neil
+EMAIL : jordan@this.com
+LOC : UMW
+DJ : 12/01/2014
