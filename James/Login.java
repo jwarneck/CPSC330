@@ -6,6 +6,8 @@
 
 package twitterproject;
 
+import java.io.IOException;
+import java.io.BufferedReader;
 //import java.io.FileReader;
 import java.io.*;
 import java.util.*;
@@ -27,6 +29,7 @@ public class Login {
     String first;
     String last;
     String joined;
+    String someone;
     //String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
     String msgFile = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
@@ -34,17 +37,11 @@ public class Login {
     File file = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt");
     User use = new User();
     
+    
+    
     BufferedReader br;
 
-    /**
-    public Login() {
-        try {
-            this.br = new BufferedReader(new FileReader(msgFile));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    **/
+    
     
     public void Login1() throws IOException{
         System.out.println("");
@@ -56,8 +53,8 @@ public class Login {
             }
             
             //JAMES' CODE
-            //File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + user + ".txt");
-            File f = new File("C:/Users/User/Desktop/twitterproject/src/twitterproject/" + user + ".txt");
+            //File f = new File("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + user + ".txt");
+            File f = new File("C:/Users/User/Desktop/CPSC330/twitterProject/src/twitterproject/UserData/" + user + ".txt");
             if(f.exists()){}
             else{
                 Menu.Menu();
@@ -71,29 +68,16 @@ public class Login {
             if (pass.equals(use.getPassword())){
                 check2 = true;
             }
+            
+            else{
+                System.out.println("Incorrect password, please try again.");
+                Login1();
+            }
         }
         
         if ((check == true) && (check2 == true)){
             loginMenu();
         }
-        
-        /**
-        else {
-            System.out.println("No account exists, would you like to create one?");
-            System.out.println("(Y or N)");
-            String that = input.nextLine();
-            
-            if(that.equals("Y")){
-                CreateAccount account = new CreateAccount();
-                account.CreateAccount();
-            }
-            
-            else {
-                System.exit(0);
-            }
-        }
-        */
-        
         
     }
     
@@ -102,27 +86,24 @@ public class Login {
         System.out.println("");
         System.out.println("1: Edit Account Info");
         System.out.println("2: Post a new message");
-        System.out.println("3: View trending messages");
-        System.out.println("-: View hashtag");
+        System.out.println("3: View a user's messages");
+        //System.out.println("-: View hashtag");
         System.out.println("4: View recent messages");
         System.out.println("5: Logout and Return to main menu");
         System.out.println("");
         choice = input.nextLine();
         
         if (choice.equals("1")){
-        	//email = use.getEmail();
-        	//location = use.getLocation();
-        	//first = use.getFirst();
-        	//last = use.getLast();
-        	//joined = use.getJoined();
-        	email = "something";
-        	location = "this";
-        	first = "that";
-        	last = "do";
-        	joined = "number";
-        	
+            
+            email = use.getEmail();
+            location = use.getLocation();
+            first = use.getFirst();
+            last = use.getLast();
+            joined = use.getJoined();
+            
             EditProfile account = new EditProfile();
             account.EditProfile(email, joined, first, last, location, user, pass);
+            account.editMenu();
         }
         
         else if (choice.equals("2")){
@@ -133,7 +114,11 @@ public class Login {
         }
         
         else if (choice.equals("3")){
-            System.out.println("view trending");
+            System.out.println("What user's messages would you like to see?");
+            someone = input.nextLine();
+            createPost view = new createPost();
+            view.findPost(someone);
+            
             
         }
         

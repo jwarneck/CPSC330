@@ -34,20 +34,28 @@ public class createPost {
     
     
     public void createPost(String username) throws IOException{
-        //this.author = stuff.getUser();
-    	author = username;
+        this.author = username;
+        System.out.println("AUTHOR: " + author);
+        System.out.println("CREATE POST");
         setMessage();
-       // charLimit();
-        //postMessage();
-        //test.loginMenu();
+
     }
     
+    /**
+    public void getU(String username){
+        this.author = username;
+        //return author;
+    }
+    */
+    
     public void setMessage() throws IOException{
+        
         System.out.println("Type your message, or 1 to cancel. Message must be under 140 characters: ");
         message = input.nextLine();
-        cancelPost();
+        
         charLimit();
         if (message.equals("1")) {
+                System.out.println("MESSAGE CANCELLED");
         	cancelPost();
         }
         
@@ -74,20 +82,20 @@ public class createPost {
     }
     
     public void postMessage(){
-    	//author = account.getUsername();
-    	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         Calendar cal = Calendar.getInstance();
         datePosted = dateFormat.format(cal.getTime());
         
         
-        
-    	message = "Author: " + author + " : " + message + " [Favourited: 0]" + "[Reposted: 0]";
-    	
-    	//try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {
-	    //out.println(message);
+    	String POST = "Author: " + this.author + " Date Posted: " + datePosted + " Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]";
 
+        System.out.println(POST);
+        
+    	//try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {
     	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt", true)))) {
-    	    out.println(message);
+    		out.println(POST);
+            
+
         
         
     	}catch (IOException e) {
@@ -98,23 +106,23 @@ public class createPost {
         
     }
     
-    public void cancelPost(){
-        //Login newLogin = new Login();
-        //newLogin.loginMenu();
+    public void cancelPost() throws IOException{
+        Login newLogin = new Login();
+        newLogin.loginMenu();
     }
     
     public void charLimit(){
     	charCount = message.length();
         
     }
-    public void findPost(){
-    	
-    		//String filePath = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
-    	    String filePath = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
+    public void findPost(String findIt){
+    		
+    	    //String filePath = "/Users/jordanwarnecke/GitHub/CPSC330/twitterroject/src/twitterproject/messages.txt";
+            String filePath = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     	    BufferedReader br;
-    	    String inputSearch = "Author:" + author;
-    	    String line = "";
-
+    	    String inputSearch = "Author: " + findIt;
+    	    String line = " ";
+    	   
     	    try {
     	        br = new BufferedReader(new FileReader(filePath));
     	        try {
@@ -122,7 +130,7 @@ public class createPost {
     	            {
     	                //System.out.println(line);
     	                String[] words = line.split(" ");
-
+    	                
     	                for (String word : words) {
     	                  if (word.equals(inputSearch)) {
     	                	  System.out.println(word + " ");
@@ -133,11 +141,11 @@ public class createPost {
     	            br.close();
     	        } catch (IOException e) {
     	            
-    	            e.printStackTrace();
+    	            //e.printStackTrace();
     	        }
     	    } catch (FileNotFoundException e) {
     	        
-    	        e.printStackTrace();
+    	        //e.printStackTrace();
     	    }
 
     	}
