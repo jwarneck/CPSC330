@@ -54,7 +54,7 @@ public class User {
         System.out.println(" LBL PATH USER = " + username);
         
         Path fFilePath2 =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
-        //System.out.println("PATH = " + fFilePath2);
+        System.out.println("PATH = " + fFilePath2);
         try (Scanner scanner =  new Scanner(fFilePath2, ENCODING.name())){
             System.out.println("processLBL try");
             while (scanner.hasNextLine()){
@@ -80,7 +80,7 @@ public class User {
             }
             
             else {
-                System.out.println("processLine elseIN");
+                //System.out.println("processLine elseIN");
                 if ( scanner.hasNextLine())
                     processLine(scanner.nextLine());
             }
@@ -165,7 +165,9 @@ public class User {
         some.loginMenu();
     }
     
-    public String getEmail() throws IOException{
+    public String getEmail(String YOLO) throws IOException{
+        //username = YOLO;
+        //System.out.println("EMAIL USER = " + YOLO);
         thing = "EMAIL";
         processLineByLine(username);
         //System.out.println("THING 2: " + thing2);
