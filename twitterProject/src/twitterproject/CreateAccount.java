@@ -58,7 +58,7 @@ public class CreateAccount {
     
         System.out.println("Please enter your First Name.");
         firstName = input.nextLine();
-        firstName = "FIRST = " + firstName;
+        firstName = "FIRST : " + firstName;
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	    //out.println(firstName);
         
@@ -76,7 +76,7 @@ public class CreateAccount {
         
         System.out.println("Please enter your Last Name.");
         lastName = input.nextLine();
-        lastName = "LAST = " + lastName;
+        lastName = "LAST : " + lastName;
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	   // out.println(lastName);
         
@@ -94,7 +94,7 @@ public class CreateAccount {
         
         System.out.println("Please enter your Email Address.");
         email = input.nextLine();
-        email = "EMAIL = " + email;
+        email = "EMAIL : " + email;
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	  //  out.println(email);
             
@@ -112,7 +112,7 @@ public class CreateAccount {
         
         System.out.println("Please enter where you are located.");
         location = input.nextLine();
-        location = "LOC = " + location;
+        location = "LOC : " + location;
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	//    out.println(location);
         
@@ -131,7 +131,7 @@ public class CreateAccount {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Calendar cal = Calendar.getInstance();
         dateJoined = dateFormat.format(cal.getTime());
-        dateJoined = "DJ = " + dateJoined;
+        dateJoined = "DJ : " + dateJoined;
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	//    out.println(dateJoined);
         
@@ -147,7 +147,7 @@ public class CreateAccount {
     public void setPassword() throws IOException{
         System.out.println("Please enter the password you'd like to use.");
         password = input.nextLine();
-        password = "PASS = " + password;
+        password = "PASS : " + password;
         //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/C:/Users/User/Desktop/dataFile.txt", true)))) {
     	//    out.println(password);
         
@@ -174,7 +174,7 @@ public class CreateAccount {
             }
             else {
                 try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
-                out.println("USER = " + username);
+                out.println("USER : " + username);
                 
                 }
                 catch (IOException e) {

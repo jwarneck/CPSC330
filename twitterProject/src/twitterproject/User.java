@@ -70,8 +70,7 @@ public class User {
         Scanner scanner = new Scanner(aLine);
         scanner.useDelimiter(" : ");
         if (scanner.hasNext()){
-            //asumes line has a certain structure
-            //System.out.println("THING IS: " + thing);
+            System.out.println("THING IS: " + thing);
             if (scanner.next().equals(thing)){
                 thing2 = scanner.next();
                 //System.out.println("THING 2: " + thing2);
@@ -165,7 +164,7 @@ public class User {
         some.loginMenu();
     }
     
-    public String getEmail(String YOLO) throws IOException{
+    public String getEmail() throws IOException{
         //username = YOLO;
         //System.out.println("EMAIL USER = " + YOLO);
         thing = "EMAIL";

@@ -1,7 +1,0 @@
-USER = vchap
-PASS = 1234
-FIRST = Vicki
-LAST = Chap
-EMAIL = qwer
-LOC = asdf
-DJ = 11/30/2014
