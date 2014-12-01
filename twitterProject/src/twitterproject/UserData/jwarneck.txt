@@ -1,7 +1,7 @@
 USER : jwarneck
-PASS : 4321
-FIRST : Jordan
-LAST : Warnecke
-EMAIL : jordan
-LOC : arlington
-DJ : 11/29/2014
+PASS : 1234
+FIRST : George
+LAST : yahoo.com
+EMAIL : this.com
+LOC : yahoo.com
+DJ : yahoo.com

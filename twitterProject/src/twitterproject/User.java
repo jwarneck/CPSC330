@@ -45,6 +45,8 @@ public class User {
     
     //private final Path fFilePath =  Paths.get("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/" + username + ".txt");
     private final static Charset ENCODING = StandardCharsets.UTF_8;
+    private String newFirst;
+    private String newLast;
     
     
     //read files with structured data
@@ -160,34 +162,43 @@ public class User {
     public void setPassword(String newPassword) throws IOException{
         password = newPassword;
         System.out.println("NEW PASSWORD SET");
-        Login some = new Login();
-        some.loginMenu();
+        EditProfile some = new EditProfile();
+        some.editMenu();
     }
     
     public String getEmail() throws IOException{
-        //username = YOLO;
-        //System.out.println("EMAIL USER = " + YOLO);
+        System.out.println("EMAIL USER = " + username);
         thing = "EMAIL";
         processLineByLine(username);
-        //System.out.println("THING 2: " + thing2);
+        System.out.println("THING 2: " + thing2);
         email = thing2;
-        Login some = new Login();
-        some.loginMenu();
         return email;
     }
     
     public void setLocation(String location) throws IOException{
         newLocation = location;
         System.out.println("NEW LOCATION = " + newLocation);
-        Login some = new Login();
-        some.loginMenu();
+        EditProfile some = new EditProfile();
+        some.editMenu();
     }
 
     public void setEmail(String email) throws IOException{
         newEmail = email;
         System.out.println("NEW EMAIL = " + newEmail);
-        Login some = new Login();
-        some.loginMenu();
+        EditProfile some = new EditProfile();
+        some.editMenu();
+    }
+    
+    public void setFirst(String First) throws IOException{
+        newFirst = first;
+        EditProfile some = new EditProfile();
+        some.editMenu();
+    }
+    
+    public void setLast(String First) throws IOException{
+        newLast = last;
+        EditProfile some = new EditProfile();
+        some.editMenu();
     }
     
     public String getLocation() throws IOException{

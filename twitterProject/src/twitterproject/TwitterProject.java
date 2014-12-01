@@ -23,6 +23,7 @@ public class TwitterProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
+        System.out.println("Welcome to the CPSC department Message Board");
         Menu.Menu();
     }
     

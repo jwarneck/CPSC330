@@ -23,26 +23,22 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         String choice;
         
-        System.out.println("Welcome to the CPSC department Message Board");
+        System.out.println(" ");
         System.out.println("Please choose an option below:");
         System.out.println("");
         System.out.println("1: Login");
         System.out.println("2: Create Account");
         System.out.println("3: View messages");
-        //System.out.println("4: View trending messages");
         System.out.println("4: Quit");
         
         choice = input.nextLine();
         if (choice.equals("1")){
-            //System.out.println("Login");
             Login newLogin = new Login();
             newLogin.Login1();
         }
         
         else if (choice.equals("2")){
-            
-            System.out.println("Create Account");
-            
+
             CreateAccount newAccount = new CreateAccount();
             newAccount.CreateAccount();
            
@@ -51,6 +47,7 @@ public class Menu {
         
         else if (choice.equals("3")){
             System.out.println("Message list");
+            System.out.println(" ");
             
             try {
                 Scanner sc = new Scanner(file);
@@ -65,8 +62,6 @@ public class Menu {
                 e.printStackTrace();
             }
             
-            // print all recent stored messages
-            // set limit to print n messages?
         }
         /**
         else if (choice.equals("4")){
@@ -77,7 +72,6 @@ public class Menu {
         }
         */
         else if (choice.equals("4")){
-            //System.out.println("Logged out successfully.");
             System.exit(0);
         }
         

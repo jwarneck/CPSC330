@@ -36,6 +36,8 @@ public class EditProfile {
     
     User set = new User();
     User get = new User();
+    private String newLast;
+    private String newFirst;
     
     
     public void EditProfile(String thisEmail, String thisJoined,String thisFirst, String thisLast, String thisLocation, String thisUser, String thisPass) throws IOException{
@@ -50,20 +52,67 @@ public class EditProfile {
         editMenu();
     }
     
-    public void changeUsername (){
-        //user enters new desired username
-        //bool statement checking username
-        System.out.println("Enter your new username: ");
-        newUsername = input.nextLine();
+    public void changeName () throws FileNotFoundException, IOException{
+        System.out.println("Change First or Last name? ");
+        System.out.println("Enter 'F' for first, 'L' for last. ");
+        choice = input.nextLine().toUpperCase();
         
-        if (USER == true){
-            username = newUsername;
+        if ("F".equals(choice)){
+            System.out.println("Enter your new first name: ");
+            newFirst = input.nextLine();
+            //PrintWriter writer = new PrintWriter("C:/Users/User/Desktop/dataFile.txt");
+            PrintWriter writer = new PrintWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
+            writer.print("");
+            writer.close();
+
+        
+            //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/dataFile.txt", true)))) {
+            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
+                out.println("USER : " + username);
+                out.println("PASS : " + password);
+                out.println("FIRST : " + newFirst);
+                out.println("LAST : " + last);
+                out.println("EMAIL : " + email);
+                out.println("LOC : " + location);
+                out.println("DJ : " + joined);
+        
+        
+            }catch (IOException e) {
+                    }
             
-            set.setUsername(username);
+            set.setFirst(newFirst);
         }
-        else{
-            System.out.println("Username already in use, please try again.");
-            changeUsername();
+        
+        else if ("L".equals(choice)){
+            System.out.println("Enter your new last name: ");
+            newLast = input.nextLine();
+            //PrintWriter writer = new PrintWriter("C:/Users/User/Desktop/dataFile.txt");
+            PrintWriter writer = new PrintWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt");
+            writer.print("");
+            writer.close();
+
+        
+            //try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:/Users/User/Desktop/dataFile.txt", true)))) {
+            try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/UserData/" + username + ".txt", true)))) {
+                out.println("USER : " + username);
+                out.println("PASS : " + password);
+                out.println("FIRST : " + first);
+                out.println("LAST : " + newLast);
+                out.println("EMAIL : " + email);
+                out.println("LOC : " + location);
+                out.println("DJ : " + joined);
+        
+        
+            }catch (IOException e) {
+                    }
+            
+            set.setLast(newLast);
+            
+        }
+        
+        else {
+            System.out.println("Invalid input, try again.");
+            changeName();
         }
         
     }
@@ -144,9 +193,11 @@ public class EditProfile {
     }
 
     public void editMenu() throws IOException{
+        System.out.println("");
+        System.out.println("");
         System.out.println("Please choose an option below: ");
         System.out.println("");
-        System.out.println("1: Change User Name");
+        System.out.println("1: Change Name");
         System.out.println("2: Change Password");
         System.out.println("3: Change Location");
         System.out.println("4: Change Email Address");
@@ -156,8 +207,8 @@ public class EditProfile {
         choice = input.nextLine();
         
         if (choice.equals("1")){
-            System.out.println("Change Username");
-            changeUsername();
+            System.out.println("Change Name");
+            changeName();
         }
         
         else if (choice.equals("2")){

@@ -67,6 +67,11 @@ public class Login {
             if (pass.equals(use.getPassword())){
                 check2 = true;
             }
+            
+            else{
+                System.out.println("Incorrect password, please try again.");
+                Login1();
+            }
         }
         
         if ((check == true) && (check2 == true)){
@@ -81,13 +86,14 @@ public class Login {
         System.out.println("1: Edit Account Info");
         System.out.println("2: Post a new message");
         System.out.println("3: View trending messages");
-        System.out.println("-: View hashtag");
+        //System.out.println("-: View hashtag");
         System.out.println("4: View recent messages");
         System.out.println("5: Logout and Return to main menu");
         System.out.println("");
         choice = input.nextLine();
         
         if (choice.equals("1")){
+            
             email = use.getEmail();
             location = use.getLocation();
             first = use.getFirst();
@@ -96,6 +102,7 @@ public class Login {
             
             EditProfile account = new EditProfile();
             account.EditProfile(email, joined, first, last, location, user, pass);
+            account.editMenu();
         }
         
         else if (choice.equals("2")){
