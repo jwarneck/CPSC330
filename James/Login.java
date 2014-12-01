@@ -6,8 +6,6 @@
 
 package twitterproject;
 
-import java.io.IOException;
-import java.io.BufferedReader;
 //import java.io.FileReader;
 import java.io.*;
 import java.util.*;
@@ -24,6 +22,11 @@ public class Login {
     String choice;
     String user;
     String pass;
+    String email;
+    String location;
+    String first;
+    String last;
+    String joined;
     //String msgFile = "/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt";
     String msgFile = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     boolean check, check2 = false;
@@ -107,8 +110,19 @@ public class Login {
         choice = input.nextLine();
         
         if (choice.equals("1")){
+        	//email = use.getEmail();
+        	//location = use.getLocation();
+        	//first = use.getFirst();
+        	//last = use.getLast();
+        	//joined = use.getJoined();
+        	email = "something";
+        	location = "this";
+        	first = "that";
+        	last = "do";
+        	joined = "number";
+        	
             EditProfile account = new EditProfile();
-            account.EditProfile();
+            account.EditProfile(email, joined, first, last, location, user, pass);
         }
         
         else if (choice.equals("2")){
