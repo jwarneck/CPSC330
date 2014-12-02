@@ -108,28 +108,38 @@ public class createPost {
     	charCount = message.length();
         
     }
-    public void findPost(String findIt){
-    	    String filePath = "/Users/jordanwarnecke/GitHub/CPSC330/twitterroject/src/twitterproject/messages.txt";
+    public void findPost(String findIt) throws IOException{
+    	    String filePath = "/Users/jordanwarnecke/GitHub/CPSC330/twitterproject/src/twitterproject/messages.txt";
             //String filePath = "C:/Users/User/Desktop/twitterproject/src/twitterproject/messages.txt";
     	    BufferedReader br;
-    	    String inputSearch = "Author:" + findIt;
+    	    String inputSearch = "Author: " + findIt;
     	    String line = " ";
+            //System.out.println("findPost()");
+           // System.out.println("inputSearch = " + inputSearch);
 
     	    try {
     	        br = new BufferedReader(new FileReader(filePath));
+                //System.out.println("TRY1");
     	        try {
-    	            while((line = br.readLine()) != null)
-    	            {
+                    //System.out.println("TRY2");
+    	            //while(((line = br.readLine()) != null) && (line.startsWith("Author: " + inputSearch)))
+                    while ((line = br.readLine()) != null) {
+                        
     	                String[] words = line.split(" ");
+                        //System.out.println("LINE = " + line);
+                        System.out.println(line);
 
     	                for (String word : words) {
-    	                  if (word.equals(inputSearch)) {
-                            System.out.println(word + " ");
+                            //System.out.println("FOR WORD in WORDS" + word);
+    	                  if (word.startsWith(inputSearch)) {
+                            System.out.println("WORD = " + word + " ");
     	                  }
     	                }
 
     	            }
     	            br.close();
+                    Login go = new Login();
+                    go.Login1();
     	        } catch (IOException e) {
     	            
     	            //e.printStackTrace();
@@ -138,7 +148,10 @@ public class createPost {
     	        
     	        //e.printStackTrace();
     	    }
-
+            
+            Login go = new Login();
+            go.Login1();
+            
     	}
 
     }

@@ -92,7 +92,7 @@ public class Login {
         System.out.println("");
         System.out.println("1: Edit Account Info");
         System.out.println("2: Post a new message");
-        System.out.println("3: View trending messages");
+        System.out.println("3: View another user's messages");
         //System.out.println("-: View hashtag");
         System.out.println("4: View recent messages");
         System.out.println("5: Logout and Return to main menu");
@@ -124,6 +124,7 @@ public class Login {
             someone = input.nextLine();
             createPost view = new createPost();
             view.findPost(someone);
+            
             
             
         }

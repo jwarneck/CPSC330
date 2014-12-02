@@ -1,7 +1,0 @@
-USER : alyssa
-PASS : 1234
-FIRST : Alyssa
-LAST : jew
-EMAIL : out
-LOC : j
-DJ : fds
