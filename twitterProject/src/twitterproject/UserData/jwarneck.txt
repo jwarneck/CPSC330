@@ -1,7 +1,7 @@
 USER : jwarneck
 PASS : 1234
-FIRST : jordan
-LAST : Neil
-EMAIL : jordan@this.com
+FIRST : Jordan
+LAST : Warnecke
+EMAIL : homieG@mail.cm
 LOC : UMW
 DJ : 12/01/2014

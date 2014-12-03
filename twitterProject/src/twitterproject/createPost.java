@@ -80,8 +80,10 @@ public class createPost {
         datePosted = dateFormat.format(cal.getTime());
         
         
-    	String POST = "Author: " + this.author + " Date Posted: " + datePosted + "\n" + "Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]" + "\n";
+    	//String POST = "Author: " + this.author + " Date Posted: " + datePosted + "\n" + "Message: " + message +  "[ Favourited: 0]" + " [Reposted: 0]" + "\n";
 
+        String POST = "Author: " + this.author + " Date Posted: " + datePosted + "\n" + "Message: " + message + "\n";
+        
         //System.out.println(POST);
         
     	try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("/Users/jordanwarnecke/GitHub/CPSC330/twitterProject/src/twitterproject/messages.txt", true)))) {

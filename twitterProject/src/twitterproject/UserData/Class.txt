@@ -1,0 +1,7 @@
+USER : class
+PASS : james
+FIRST : 12/02/2014
+LAST : 330
+EMAIL : class@mail.com
+LOC : umw
+DJ : Class

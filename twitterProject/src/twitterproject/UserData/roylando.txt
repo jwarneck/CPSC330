@@ -1,0 +1,7 @@
+USER : roylando
+PASS : 4321
+FIRST : James
+LAST : dickbutt
+EMAIL : this
+LOC : home
+DJ : 12/02/2014
